@@ -1,0 +1,35 @@
+{
+	"name": "nbob",
+	"description": "Ex Machina's frontend build tool",
+	"version": "0.1.0",
+	"keywords": [
+		"assembler",
+		"builder",
+		"compiler",
+		"deployer",
+		"javascript",
+		"lint",
+		"less",
+		"brunch",
+		"grunt",
+		"yeoman",
+		"mimosa",
+		"server",
+		"express",
+		"source",
+		"maps"
+	],
+	"homepage": "https://github.com/exmg/nbob/",
+	"author": "Ex Machina",
+	"license": "MIT",
+	"repository": "https://github.com/exmg/nbob.git",
+	"main": "./lib/index",
+	"bin": {
+		"nbob": "./bin/nbob"
+	},
+	"preferGlobal": true,
+	"dependencies": {
+	},
+	"devDependencies": {
+	}
+}
