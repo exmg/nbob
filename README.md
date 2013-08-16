@@ -1,4 +1,4 @@
-nbob
+nBob
 ====
 
-Node port of Ex Machina's Bob build tool
+Node port of Ex Machina's frontend build tool: Bob.
