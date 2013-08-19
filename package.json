@@ -29,6 +29,7 @@
 	},
 	"preferGlobal": true,
 	"dependencies": {
+		"commander": "~2.0.0"
 	},
 	"devDependencies": {
 	}
