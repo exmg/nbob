@@ -29,7 +29,11 @@
 	},
 	"preferGlobal": true,
 	"dependencies": {
-		"commander": "~2.0.0"
+		"es6-promise": "~0.1.1",
+		"lodash": "~2.4.1",
+		"minimist": "~0.0.8",
+		"abbrev": "~1.0.4",
+		"rimraf": "~2.2.6"
 	},
 	"devDependencies": {
 	}
