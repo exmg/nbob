@@ -1,0 +1,8 @@
+{
+	"yetAnotherKey": "with yet another value",
+	"object": {
+		"c": 3
+	},
+	"anotherObject": null,
+	"array": 6
+}

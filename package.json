@@ -33,6 +33,7 @@
 		"lodash": "~2.4.1",
 		"minimist": "~0.0.8",
 		"abbrev": "~1.0.4",
+		"npmlog": "~0.0.6",
 		"rimraf": "~2.2.6"
 	},
 	"devDependencies": {
