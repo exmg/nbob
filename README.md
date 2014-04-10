@@ -2,53 +2,103 @@ nBob
 ====
 nbob or nBob, short for Node Bob, is Ex Machina's frontend build tool.
 
-# History
-It is based on the Rhino JS based build tool Bob which has been developed in house over the last years.
-We are looking to improve performance and be able to more easily use the various third party tools we depend on by moving over to Node JS.
-We will also be drawing inspiration from other great tools out there like brunch, grunt, yeoman and mimosa to further extend and improve our functionality.
+It follows in the footsteps of our old Rhino JS based build tool Bob with much improved performance and many more and better third party tool integrations thanks to Node and it's plentiful eco-system.
 
-# Roadmap
-1. Port most command line functionality of Bob to nBob
-2. Add support for a build server that watches for file changes
-3. ..
-4. Profit!
+Inspiration is being drawn from other great tools out there like gulp, brunch, grunt, yeoman and mimosa.
 
 # Usage
-This section will describe the command line options. For now here is the help of the old Bob:
+Running nbob with invalid or incomplete arguments will result in help being displayed:
 
-	Usage: bob [--debug] [dir] [-h || --help] <command(s)>
+	nBob v0.1.1
+
+	Usage: nbob [options] <commands>
+
+	Commands:
+	  init
+	    nbob	*Create nbob-config.json
+	    hint	*Create .jshintrc
+	  update
+	    api		*Update EM api directory
+	    doc		*Update doc directory
+	    l10n	*Update l10n directory
+	    lib		*Update lib directory
+	    images	*Optimize image files
+	  clean		Remove build and dist directories
+	  make		Analyze, build and test
+	  analyze
+	    js
+	      hint	*Analyze JS with JSHint
+	      style	*Check JS coding style
+	      amd	*Check EM AMD dependencies
+	    l10n	*Check localization
+	  build
+	    l10n	*Localize files
+	    templates	*Concatenate templates
+	    css
+	      less	*Compile LESS to CSS
+	      base64	*Inline images into CSS
+	      minify	*Minify CSS
+	    js
+	      es6	*Transpile ES6 to ES5
+	      concat	*Concatenate JS files
+	      amd	*Optimize EM AMD modules
+	      minify	*Minify JS
+	    include	*Include files
+	    substitute	*Subtitute variables
+	  test		*Run tests
+	  serve		*Make and host files
+	  deploy	*Copy a clean make to S3
 
 	Options:
-	--debug :: use Rhino debugger instead of normal shell
-	[dir] :: use specified directory (defaults to current directory)
-	-h || --help :: show usage instructions
+	  -d, --dir	Use specified working directory (default: /Users/pp/projects/playtotv-client-lib)
+	  -e, --env	*Use specified environment config overrides
+	  -l, --level	Use specified log level (spam/debug/info/warn/error/silent) (default: info)
+	  -r, --reload	*Run live-reload server on dist directory
+	  -s, --sync	*Run browser-sync server on dist directory
 
-	Commands (in execution order):
-	-b || --build :: shortcut for all commands marked with *
-	-c || --clean* :: delete build and dist
-	-u || --update :: update specified lib or all libs
-	-g || --api* :: generate and add api src files to srcs as configured
-	-f || --files :: custom build with specified srcs (comma separated arg string)
-	-a || --analyze* :: check definitions, dependencies, conventions and jshint
-	-t || --test* :: run specified unit test or all tests from test
-	-v || --version :: change version to specified string
-	-j || --jsdoc :: generate doc with comma separated file args or libs and srcs
-	-m || --compile* :: concatenate *.js from libs and srcs and minify it
-	-s || --less* :: compile configured or *.less to *.css in build
-	-l || --localize* :: localize configured or *-l10n* to build
-	-p || --copy* :: copy all but build excludes into build
-	-e || --templates* :: package build/templates subdirectories into json files
-	-i || --dist* :: copy all but dist excludes from build to dist
-	-n || --manifest* :: create app cache manifest(s) from dist files
-	-d || --deploy :: deploy dist to s3 bucket defined by config
+	*) Not yet implemented
+
+	Note: Like options, commands can be abbreviated, per example:
+	Full length:	nbob --env=staging update:api deploy
+	Abbreviated:	nbob -e staging u:a d
 
 # Config
-Configuration consists of conventional defaults defined in [bob-config.json](bob-config.json) which can be extended and overridden by `~/.bob/bob-config.json` and `<project>/bob-config.json`.
+Configuration consists of conventional defaults defined in [nbob-config.json](nbob-config.json) which can be extended and overridden by `~/.nbob/nbob-config.json` and `<project>/nbob-config.json`.
 
 *TODO: Document configuration options and defaults*
 
+# Processors
+Please see processor source files for more information on how they work.
+Also see [package.json](package.json) for exact dependencies.
+
+Later we may add support for showing detailed help about a specified command (e.g: nbob -h build:js:minify).
+
+While processor implementations are still in the works, here are some links to third party tools that might be used:
+
+* Documentation
+  * [jsdoc3](https://github.com/jsdoc3/jsdoc)
+* JS Linting
+  * [jshint](https://github.com/jshint/jshint)
+* CSS pre-processing
+  * [less](http://lesscss.org)
+* CSS minification
+  * [yuicompressor](https://github.com/yui/yuicompressor)
+  * [clean-css](https://github.com/GoalSmashers/clean-css)
+* ES6 transpiling
+  * [traceur](https://github.com/google/traceur-compiler)
+  * Or something smaller/simpler for basics features like: Class, Module, Promise
+* JS minification
+  * [uglifyjs](https://github.com/mishoo/UglifyJS)
+* Web server
+  * [connect](http://www.senchalabs.org/connect) (Express is overkill)
+    * Use middleware: static, directory, favicon, errorHandler
+* Live Reload
+  * [tiny-lr](https://github.com/mklabs/tiny-lr)
+* Browser Sync
+  * [browser-sync](https://github.com/shakyshane/browser-sync)
+
 # License
-Copyright (c) 2013 [Ex Machina](http://exmg.tv).
+Copyright (c) 2014 [Ex Machina](http://exmg.tv).
 
 Released under MIT License. Enjoy and Fork!
 
