@@ -45,7 +45,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      amd	*Optimize EM AMD modules
 	      minify	*Minify JS
 	    include	*Include files
-	    substitute	*Subtitute variables
+	    substitute	*Substitute variables
 	  test		*Run tests
 	  serve		*Make and host files
 	  deploy	*Copy a clean make to S3
