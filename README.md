@@ -36,6 +36,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    templates	*Concatenate templates
 	    css
 	      less	*Compile LESS to CSS
+	      sass	*Compile SASS to CSS
 	      base64	*Inline images into CSS
 	      minify	*Minify CSS
 	    js
@@ -81,6 +82,7 @@ While processor implementations are still in the works, here are some links to t
   * [jshint](https://github.com/jshint/jshint)
 * CSS pre-processing
   * [less](http://lesscss.org)
+  * [sass](https://github.com/andrew/node-sass)
 * CSS minification
   * [yuicompressor](https://github.com/yui/yuicompressor)
   * [clean-css](https://github.com/GoalSmashers/clean-css)
