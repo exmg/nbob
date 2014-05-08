@@ -29,10 +29,12 @@
 	},
 	"preferGlobal": true,
 	"dependencies": {
-		"es6-promise": "~0.1.1",
-		"lodash": "~2.4.1",
-		"minimist": "~0.0.8",
 		"abbrev": "~1.0.4",
+		"es6-promise": "~0.1.1",
+		"jshint": "~2.5.0",
+		"lodash": "~2.4.1",
+		"minimatch": "~0.2.14",
+		"minimist": "~0.0.8",
 		"npmlog": "~0.0.6",
 		"rimraf": "~2.2.6"
 	},

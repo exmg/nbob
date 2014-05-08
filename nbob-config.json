@@ -1,4 +1,10 @@
 {
+	"name": "Unnamed",
+	"version": "0",
+	"files": [ "**/*", "!build", "!dist", "!nbob-config.json", "!*.sublime-*" ],
+	"analyze:js:hint": {
+		"files": [ "src/**/*.js" ]
+	},
 	"deploy": {
 		"user": null,
 		"accessKey": null,
