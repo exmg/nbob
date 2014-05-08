@@ -3,7 +3,9 @@
 	"version": "0",
 	"files": [ "**/*", "!build", "!dist", "!nbob-config.json", "!*.sublime-*" ],
 	"analyze:js:hint": {
-		"files": [ "src/**/*.js" ]
+		"files": [ "**/*.js" ],
+		"rcFile": ".jshintrc",
+		"ignoreFile": ".jshintignore"
 	},
 	"deploy": {
 		"user": null,
