@@ -2,7 +2,7 @@
 	"project": {
 		"name": "Unnamed",
 		"version": "0",
-		"files": [ "**/*", "!build", "!dist", "!nbob-config.json", "!*.sublime-*" ]
+		"files": [ "**/*", "!build/**/*", "!dist/**/*", "!nbob-config.json", "!*.sublime-*" ]
 	},
 	"analyze:js:hint": {
 		"files": [ "**/*.js" ],
