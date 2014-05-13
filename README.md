@@ -15,54 +15,54 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 
 	Commands:
 	  init
-	    nbob	*Create nbob-config.json
-	    hint	*Create .jshintrc and .jshintignore
+	    nbob        *Create nbob-config.json
+	    hint        *Create .jshintrc and .jshintignore
 	  update
-	    api		*Update EM api directory
-	    doc		*Update doc directory
-	    l10n	*Update l10n directory
-	    lib		*Update lib directory
-	    images	*Optimize image files
-	  clean		Remove build and dist directories
-	  make		Analyze, build and test
+	    api         *Update EM api directory
+	    doc         *Update doc directory
+	    l10n        *Update l10n directory
+	    lib         *Update lib directory
+	    images      *Optimize image files
+	  clean         Remove build and dist directories
+	  make          Analyze, build and test
 	  analyze
 	    js
-	      hint	*Analyze JS with JSHint
-	      style	*Check JS coding style
-	      amd	*Check EM AMD dependencies
-	    l10n	*Check localization
+	      hint      *Analyze JS with JSHint
+	      style     *Check JS coding style
+	      amd       *Check EM AMD dependencies
+	    l10n        *Check localization
 	  build
-	    l10n	*Localize files
-	    templates	*Concatenate templates
+	    l10n        *Localize files
+	    templates   *Concatenate templates
 	    css
-	      less	*Compile LESS to CSS
-	      sass	*Compile SASS to CSS
-	      base64	*Inline images into CSS
-	      minify	*Minify CSS
+	      less      *Compile LESS to CSS
+	      sass      *Compile SASS to CSS
+	      base64    *Inline images into CSS
+	      minify    *Minify CSS
 	    js
-	      es6	*Transpile ES6 to ES5
-	      concat	*Concatenate JS files
-	      amd	*Optimize EM AMD modules
-	      minify	*Minify JS
-	    include	*Include files
-	    substitute	*Substitute variables
-	    dist	Write files to dist directory
-	  test		*Run tests
-	  serve		*Make and host files
-	  deploy	*Copy a clean make to S3
+	      es6       *Transpile ES6 to ES5
+	      concat    *Concatenate JS files
+	      amd       *Optimize EM AMD modules
+	      minify    *Minify JS
+	    include     *Include files
+	    substitute  *Substitute variables
+	    dist        Write files to dist directory
+	  test          *Run tests
+	  serve         *Make and host files
+	  deploy        *Copy a clean make to S3
 
 	Options:
-	  -d, --dir	Use specified working directory (default: /Users/pp/projects/playtotv-client-lib)
-	  -e, --env	*Use specified environment config overrides
-	  -l, --level	Use specified log level (spam/debug/info/warn/error/silent) (default: info)
-	  -r, --reload	*Run live-reload server on dist directory
-	  -s, --sync	*Run browser-sync server on dist directory
+	  -d, --dir     Use specified working directory (default: /Users/pp/projects/playtotv-client-lib)
+	  -e, --env     *Use specified environment config overrides
+	  -l, --level   Use specified log level (spam/debug/info/warn/error/silent) (default: info)
+	  -r, --reload  *Run live-reload server on dist directory
+	  -s, --sync    *Run browser-sync server on dist directory
 
 	*) Not yet implemented
 
 	Note: Like options, commands can be abbreviated, per example:
-	Full length:	nbob --env=staging update:api deploy
-	Abbreviated:	nbob -e staging u:a d
+	Full length:    nbob --env=staging update:api deploy
+	Abbreviated:    nbob -e staging u:a d
 
 # Config
 Configuration consists of conventional defaults defined in [nbob-config.json](nbob-config.json) which can be extended and overridden by `~/.nbob/nbob-config.json` and `<project>/nbob-config.json`.
