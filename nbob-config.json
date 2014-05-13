@@ -1,11 +1,16 @@
 {
-	"name": "Unnamed",
-	"version": "0",
-	"files": [ "**/*", "!build", "!dist", "!nbob-config.json", "!*.sublime-*" ],
+	"project": {
+		"name": "Unnamed",
+		"version": "0",
+		"files": [ "**/*", "!build", "!dist", "!nbob-config.json", "!*.sublime-*" ]
+	},
 	"analyze:js:hint": {
 		"files": [ "**/*.js" ],
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore"
+	},
+	"build:js:concat": {
+		"files": [ "lib/**/*.js", "src/**/*.js" ]
 	},
 	"deploy": {
 		"user": null,

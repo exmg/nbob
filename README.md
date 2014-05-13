@@ -46,6 +46,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      minify	*Minify JS
 	    include	*Include files
 	    substitute	*Substitute variables
+	    dist	Write files to dist directory
 	  test		*Run tests
 	  serve		*Make and host files
 	  deploy	*Copy a clean make to S3
