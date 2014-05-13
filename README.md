@@ -27,7 +27,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	  make          Analyze, build and test
 	  analyze
 	    js
-	      hint      *Analyze JS with JSHint
+	      hint      Analyze JS with JSHint
 	      style     *Check JS coding style
 	      amd       *Check EM AMD dependencies
 	    l10n        *Check localization
@@ -41,7 +41,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      minify    *Minify CSS
 	    js
 	      es6       *Transpile ES6 to ES5
-	      concat    *Concatenate JS files
+	      concat    Concatenate JS files
 	      amd       *Optimize EM AMD modules
 	      minify    *Minify JS
 	    include     *Include files
