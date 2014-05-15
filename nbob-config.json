@@ -9,6 +9,10 @@
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore"
 	},
+	"build:html:l10n": {
+		"locale": "en-us",
+		"files": [ "**/*-l10n.html", "**/*-l10n/**/*.html" ]
+	},
 	"build:js:concat": {
 		"files": [ "lib/**/*.js", "src/**/*.js" ]
 	},

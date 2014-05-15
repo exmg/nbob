@@ -32,8 +32,10 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      amd       *Check EM AMD dependencies
 	    l10n        *Check localization
 	  build
-	    l10n        *Localize files
-	    templates   *Concatenate templates
+	    html
+	      l10n      *Localize files
+	      minify    *Minify HTML
+	      templates *Concatenate templates
 	    css
 	      less      *Compile LESS to CSS
 	      sass      *Compile SASS to CSS
@@ -81,6 +83,8 @@ While processor implementations are still in the works, here are some links to t
   * [jsdoc3](https://github.com/jsdoc3/jsdoc)
 * JS Linting
   * [jshint](https://github.com/jshint/jshint)
+* HTML minification
+  * [html-minifier](https://github.com/kangax/html-minifier)
 * CSS pre-processing
   * [less](http://lesscss.org)
   * [sass](https://github.com/andrew/node-sass)
