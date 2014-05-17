@@ -14,7 +14,8 @@
 		"files": [ "**/*-l10n.html", "**/*-l10n/**/*.html" ]
 	},
 	"build:js:concat": {
-		"files": [ "lib/**/*.js", "src/**/*.js" ]
+		"files": [ "lib/**/*.js", "src/**/*.js" ],
+		"output": "{{project.name}}-{{project.version}}.js"
 	},
 	"deploy": {
 		"user": null,
