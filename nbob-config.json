@@ -17,8 +17,12 @@
 		"ignoreFile": ".jshintignore"
 	},
 	"build:html:l10n": {
-		"locale": "en-us",
-		"files": [ "**/*-l10n.html", "**/*-l10n/**/*.html" ]
+		"files": [ "**/*-l10n.html", "**/*-l10n/**/*.html" ],
+		"locale": "en-us"
+	},
+	"build:html:templates": {
+		"files": [ "templates/*/*.html" ],
+		"ext": ".html"
 	},
 	"build:js:concat": {
 		"files": [ "lib/**/*.js", "src/**/*.js" ],

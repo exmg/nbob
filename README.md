@@ -35,7 +35,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    html
 	      l10n      Localize files
 	      minify    *Minify HTML
-	      templates *Concatenate templates
+	      templates Concatenate templates
 	    css
 	      less      *Compile LESS to CSS
 	      sass      *Compile SASS to CSS
