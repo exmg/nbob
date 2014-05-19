@@ -33,7 +33,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    l10n        *Check localization
 	  build
 	    html
-	      l10n      *Localize files
+	      l10n      Localize files
 	      minify    *Minify HTML
 	      templates *Concatenate templates
 	    css
