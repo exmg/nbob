@@ -33,6 +33,7 @@
 		"es6-promise": "~0.1.1",
 		"graceful-fs": "~2.0.3",
 		"jshint": "~2.5.0",
+		"less": "~1.7.0",
 		"lodash": "~2.4.1",
 		"minimatch": "~0.2.14",
 		"minimist": "~0.0.8",

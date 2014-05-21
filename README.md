@@ -37,7 +37,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      minify    *Minify HTML
 	      templates Concatenate templates
 	    css
-	      less      *Compile LESS to CSS
+	      less      Compile LESS to CSS
 	      sass      *Compile SASS to CSS
 	      base64    *Inline images into CSS
 	      minify    *Minify CSS

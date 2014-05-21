@@ -28,8 +28,11 @@
 		"files": [ "lib/**/*.js", "src/**/*.js" ],
 		"output": "{{project.name}}-{{project.version}}.js"
 	},
+	"build:css:less": {
+		"files": [ "**/*.less" ]
+	},
 	"build:dist": {
-		"files": [ "**/*" ],
+		"files": [ "**/*", "!**/*.less" ],
 		"dir": "dist"
 	},
 	"deploy": {
