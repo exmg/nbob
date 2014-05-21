@@ -28,6 +28,10 @@
 		"files": [ "lib/**/*.js", "src/**/*.js" ],
 		"output": "{{project.name}}-{{project.version}}.js"
 	},
+	"build:dist": {
+		"files": [ "**/*" ],
+		"dir": "dist"
+	},
 	"deploy": {
 		"user": null,
 		"accessKey": null,
