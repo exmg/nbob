@@ -24,12 +24,16 @@
 		"files": [ "templates/*/*.html" ],
 		"ext": ".html"
 	},
+	"build:css:less": {
+		"files": [ "**/*.less" ]
+	},
 	"build:js:concat": {
 		"files": [ "lib/**/*.js", "src/**/*.js" ],
 		"output": "{{project.name}}-{{project.version}}.js"
 	},
-	"build:css:less": {
-		"files": [ "**/*.less" ]
+	"build:js:amd": {
+		"files": [ "**/*.js" ],
+		"exports": []
 	},
 	"build:dist": {
 		"files": [ "**/*", "!**/*.less" ],
