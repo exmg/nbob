@@ -49,7 +49,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    substitute  *Substitute variables
 	    dist        Write files to dist directory
 	  test          *Run tests
-	  serve         *Make and host files
+	  server        *Make and host files
 	  deploy        *Copy a clean make to S3
 
 	Options:
@@ -80,12 +80,9 @@ While processor implementations are still in the works, here are some links to t
 
 * Documentation
   * [jsdoc3](https://github.com/jsdoc3/jsdoc)
-* JS Linting
-  * [jshint](https://github.com/jshint/jshint)
 * HTML minification
   * [html-minifier](https://github.com/kangax/html-minifier)
 * CSS pre-processing
-  * [less](http://lesscss.org)
   * [sass](https://github.com/andrew/node-sass)
 * CSS minification
   * [yuicompressor](https://github.com/yui/yuicompressor)
@@ -95,9 +92,6 @@ While processor implementations are still in the works, here are some links to t
   * Or something smaller/simpler for basics features like: Class, Module, Promise
 * JS minification
   * [uglifyjs](https://github.com/mishoo/UglifyJS)
-* Web server
-  * [connect](http://www.senchalabs.org/connect) (Express is overkill)
-    * Use middleware: static, directory, favicon, errorHandler
 * Live Reload
   * [tiny-lr](https://github.com/mklabs/tiny-lr)
 * Browser Sync
