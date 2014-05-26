@@ -39,12 +39,12 @@
 	"build:dist": {
 		"files": [ "**/*", "!**/*.less" ]
 	},
+	"server": {
+		"port": 8080
+	},
 	"deploy": {
 		"user": null,
 		"accessKey": null,
 		"secretKey": null
-	},
-	"server": {
-		"port": 8080
 	}
 }
