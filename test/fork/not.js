@@ -1,15 +1,18 @@
 'use strict';
 
+require('graceful-fs');
+
 var start = Date.now();
 
 var jshint = require('jshint').JSHINT;
 var File = require('../../lib/file');
 var files = require('../../lib/files');
+var listFiles = require('../../lib/list-files');
 var minimatches = require('../../lib/minimatches');
 
-files.init();
+files.init(minimatches(listFiles('.'), [ '**/*.js' ]));
 
-var paths = minimatches(files.getPaths(), [ '**/*.js' ]);
+var paths = files.getPaths();
 var nrReceived = 0;
 
 new File('.jshintrc').getJSON().then(function(options) {

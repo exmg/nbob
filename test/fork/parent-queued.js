@@ -1,5 +1,7 @@
 'use strict';
 
+require('graceful-fs');
+
 var start = Date.now();
 
 var childProcess = require('child_process');
@@ -8,6 +10,7 @@ var _ = require('lodash');
 var Promise = require('../../lib/promise');
 var File = require('../../lib/file');
 var files = require('../../lib/files');
+var listFiles = require('../../lib/list-files');
 var minimatches = require('../../lib/minimatches');
 
 var numCPUs = os.cpus().length;
@@ -43,9 +46,9 @@ children.forEach(function(child) {
 	child.isBusy = false;
 });
 
-files.init();
+files.init(minimatches(listFiles('.'), [ '**/*.js' ]));
 
-var paths = minimatches(files.getPaths(), [ '**/*.js' ]);
+var paths = files.getPaths();
 
 new File('.jshintrc').getJSON().then(function(options) {
 	files.getList(paths).map(function(file) {
