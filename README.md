@@ -49,7 +49,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    substitute  *Substitute variables
 	    dist        Write files to dist directory
 	  test          *Run tests
-	  server        *Make and host files
+	  server        Make and host files
 	  deploy        *Copy a clean make to S3
 
 	Options:
