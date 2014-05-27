@@ -37,6 +37,9 @@
 		"files": [ "**/*.js" ],
 		"exports": []
 	},
+	"build:js:minify": {
+		"files": [ "**/*.js" ]
+	},
 	"build:dist": {
 		"files": [ "**/*", "!**/*.less" ]
 	},

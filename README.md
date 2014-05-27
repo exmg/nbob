@@ -44,7 +44,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      es6       *Transpile ES6 to ES5
 	      concat    Concatenate JS files
 	      amd       Optimize EM AMD modules
-	      minify    *Minify JS
+	      minify    Minify JS
 	    include     *Include files
 	    substitute  *Substitute variables
 	    dist        Write files to dist directory
@@ -90,8 +90,6 @@ While processor implementations are still in the works, here are some links to t
 * ES6 transpiling
   * [traceur](https://github.com/google/traceur-compiler)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
-* JS minification
-  * [uglifyjs](https://github.com/mishoo/UglifyJS)
 * Live Reload
   * [tiny-lr](https://github.com/mklabs/tiny-lr)
 * Browser Sync
