@@ -14,7 +14,7 @@
 		"distDir": "dist"
 	},
 	"analyze:js:hint": {
-		"files": [ "**/*.js" ],
+		"files": [ "src/**/*.js" ],
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore"
 	},
