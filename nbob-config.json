@@ -29,16 +29,16 @@
 	"build:css:less": {
 		"files": [ "**/*.less" ]
 	},
+	"build:js:minify": {
+		"files": [ "**/*.js{,.map}" ]
+	},
 	"build:js:concat": {
-		"files": [ "lib/**/*.js", "src/**/*.js" ],
-		"output": "{{project.name}}-{{project.version}}.js"
+		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
+		"output": "{{project.name}}-{{project.version}}.min.js"
 	},
 	"build:js:amd": {
 		"files": [ "**/*.js" ],
 		"exports": []
-	},
-	"build:js:minify": {
-		"files": [ "**/*.js" ]
 	},
 	"build:dist": {
 		"files": [ "**/*", "!**/*.less" ]
