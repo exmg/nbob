@@ -14,7 +14,7 @@
 		"distDir": "dist"
 	},
 	"analyze:js:hint": {
-		"files": [ "src/**/*.js" ],
+		"files": [ "**/*.js" ],
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore"
 	},
@@ -30,14 +30,14 @@
 		"files": [ "**/*.less" ]
 	},
 	"build:js:minify": {
-		"files": [ "**/*.js{,.map}" ]
+		"files": [ "{lib,src}/**/*.js{,.map}", "!**/*.min.js" ]
 	},
 	"build:js:concat": {
 		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
 		"output": "{{project.name}}-{{project.version}}.min.js"
 	},
 	"build:js:amd": {
-		"files": [ "**/*.js" ],
+		"files": [ "{{build:js:concat.output}}" ],
 		"exports": []
 	},
 	"build:dist": {
