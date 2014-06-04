@@ -39,7 +39,6 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      less      Compile LESS to CSS
 	      sass      *Compile SASS to CSS
 	      base64    *Inline images into CSS
-	      minify    *Minify CSS
 	    js
 	      es6       *Transpile ES6 to ES5
 	      minify    Minify JS
@@ -84,9 +83,6 @@ While processor implementations are still in the works, here are some links to t
   * [html-minifier](https://github.com/kangax/html-minifier)
 * CSS pre-processing
   * [sass](https://github.com/andrew/node-sass)
-* CSS minification
-  * [yuicompressor](https://github.com/yui/yuicompressor)
-  * [clean-css](https://github.com/GoalSmashers/clean-css)
 * ES6 transpiling
   * [traceur](https://github.com/google/traceur-compiler)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
