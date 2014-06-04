@@ -37,7 +37,7 @@
 		"output": "{{project.name}}-{{project.version}}.min.js"
 	},
 	"build:js:amd": {
-		"files": [ "{{build:js:concat.output}}" ],
+		"files": [ "{{build:js:concat.output}}{,.map}" ],
 		"exports": []
 	},
 	"build:dist": {
