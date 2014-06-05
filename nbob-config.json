@@ -47,8 +47,11 @@
 		"port": 8080
 	},
 	"deploy": {
-		"user": null,
-		"accessKey": null,
-		"secretKey": null
+		"files": [ "**/*", "!**/*.{gv,less,map}" ],
+		"region": "eu-west-1",
+		"bucketName": null,
+		"force": false,
+		"cacheControl": "max-age=3600",
+		"gzipExcludes": [ "**/*.{avi,gif,jpg,mov,mp3,mp4,png,wav,woff}" ]
 	}
 }
