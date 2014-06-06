@@ -52,6 +52,6 @@
 		"bucketName": null,
 		"force": false,
 		"cacheControl": "max-age=3600",
-		"gzipExcludes": [ "**/*.{avi,gif,jpg,mov,mp3,mp4,png,wav,woff}" ]
+		"gzipThreshold": 1000
 	}
 }
