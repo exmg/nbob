@@ -53,5 +53,6 @@
 		"force": false,
 		"cacheControl": "max-age=3600",
 		"gzipThreshold": 1000
-	}
+	},
+	"envConfigMap": {}
 }
