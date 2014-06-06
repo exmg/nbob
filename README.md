@@ -49,7 +49,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    dist        Write files to dist directory
 	  test          *Run tests
 	  server        Make and host files
-	  deploy        *Copy a clean make to S3
+	  deploy        Make and copy to S3
 
 	Options:
 	  -d, --dir     Use specified working directory (default: <current working directory>)
