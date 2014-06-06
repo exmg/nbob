@@ -19,8 +19,8 @@
 		"ignoreFile": ".jshintignore"
 	},
 	"build:html:l10n": {
-		"files": [ "**/*-l10n.html", "**/*-l10n/**/*.html" ],
-		"locale": "en-us"
+		"files": [ "l10n/*.json", "**/*-l10n.html", "**/*-l10n/**/*.html" ],
+		"default": null
 	},
 	"build:html:templates": {
 		"files": [ "templates/*/*.html" ],
