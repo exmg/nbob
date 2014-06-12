@@ -20,6 +20,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	  update
 	    api         *Update EM api directory
 	    doc         *Update doc directory
+	    lib         *Update l10n directory
 	    lib         *Update lib directory
 	    images      *Optimize image files
 	  clean         Remove build and dist directories
@@ -29,8 +30,8 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      hint      Analyze JS with JSHint
 	      style     *Check JS coding style
 	  build
+	    l10n        Localize files
 	    html
-	      l10n      Update l10n and localize files
 	      minify    *Minify HTML
 	      templates Concatenate templates
 	    css

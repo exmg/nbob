@@ -18,8 +18,17 @@
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore"
 	},
-	"build:html:l10n": {
-		"files": [ "l10n/*.json", "**/*-l10n.html", "**/*-l10n/**/*.html" ],
+	"update:l10n": {
+		"locales": "l10n/*.json",
+		"l10nFiles": "**/*-l10n.html",
+		"l10nDirs": "**/*-l10n/**/*.html",
+		"files": [ "{{update:l10n.locales}}", "{{update:l10n.l10nFiles}}", "{{update:l10n.l10nDirs}}" ]
+	},
+	"build:l10n": {
+		"locales": "{{update:l10n.locales}}",
+		"l10nFiles": "{{update:l10n.l10nFiles}}",
+		"l10nDirs": "{{update:l10n.l10nDirs}}",
+		"files": [ "{{build:l10n.locales}}", "{{build:l10n.l10nFiles}}", "{{build:l10n.l10nDirs}}" ],
 		"default": null
 	},
 	"build:html:templates": {
