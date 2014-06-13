@@ -23,14 +23,10 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    l10n        Update l10n directory
 	    lib         *Update lib directory
 	  clean         Remove build and dist directories
-	  make          Analyze, build and test
-	  analyze
-	    js
-	      hint      Analyze JS with JSHint
-	  build
-	    images
-	      png       *Compress png files
+	  make
 	    l10n        Localize files
+	    images
+	      png       *Compress png images
 	    html
 	      minify    *Minify HTML
 	      templates Concatenate templates
@@ -38,14 +34,15 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      less      Compile LESS to CSS
 	      sass      *Compile SASS to CSS
 	    js
+	      hint      Analyze JS with JSHint
 	      es6       *Transpile ES6 to ES5
 	      minify    Minify JS
 	      concat    Concatenate JS files
 	      amd       Optimize EM AMD modules
+	      test      *Run tests
 	    include     *Include files
 	    substitute  *Substitute variables
 	    dist        Write files to dist directory
-	  test          *Run tests
 	  server        Make and host files
 	  deploy        Make and copy to S3
 
@@ -86,6 +83,8 @@ While processor implementations are still in the works, here are some links to t
 * ES6 transpiling
   * [traceur](https://github.com/google/traceur-compiler)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
+* JS Testing
+  * [mocha](http://visionmedia.github.io/mocha)
 * Live Reload
   * [tiny-lr](https://github.com/mklabs/tiny-lr)
 * Browser Sync
