@@ -18,7 +18,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    nbob        *Create nbob-config.json
 	    hint        *Create .jshintrc and .jshintignore
 	  update
-	    api         *Update EM api directory
+	    api         Update EM api directory
 	    doc         *Update doc directory
 	    l10n        Update l10n directory
 	    lib         *Update lib directory
