@@ -13,39 +13,43 @@
 		"buildDir": "build",
 		"distDir": "dist"
 	},
-	"analyze:js:hint": {
-		"files": [ "**/*.js" ],
-		"rcFile": ".jshintrc",
-		"ignoreFile": ".jshintignore"
+	"update:api": {
+		"server": null,
+		"resources": []
 	},
 	"update:l10n": {
 		"locales": "l10n/*.json",
 		"files": [ "{{update:l10n.locales}}", "**/*-l10n.html", "**/*-l10n/**/*.html" ]
 	},
-	"build:l10n": {
+	"make:l10n": {
 		"locales": "{{update:l10n.locales}}",
 		"files": "{{> update:l10n.files}}",
 		"default": null
 	},
-	"build:html:templates": {
+	"make:html:templates": {
 		"files": [ "templates/*/*.html" ],
 		"ext": ".html"
 	},
-	"build:css:less": {
+	"make:css:less": {
 		"files": [ "**/*.less" ]
 	},
-	"build:js:minify": {
+	"make:js:hint": {
+		"files": [ "**/*.js" ],
+		"rcFile": ".jshintrc",
+		"ignoreFile": ".jshintignore"
+	},
+	"make:js:minify": {
 		"files": [ "{lib,src}/**/*.js{,.map}", "!**/*.min.js" ]
 	},
-	"build:js:concat": {
+	"make:js:concat": {
 		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
 		"output": "{{project.name}}-{{project.version}}.min.js"
 	},
-	"build:js:amd": {
-		"files": [ "{{build:js:concat.output}}{,.map}" ],
+	"make:js:amd": {
+		"files": [ "{{make:js:concat.output}}{,.map}" ],
 		"exports": []
 	},
-	"build:dist": {
+	"make:dist": {
 		"files": [ "**/*", "!**/*.less" ]
 	},
 	"server": {
