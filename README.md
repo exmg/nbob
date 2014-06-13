@@ -22,14 +22,14 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    doc         *Update doc directory
 	    l10n        Update l10n directory
 	    lib         *Update lib directory
-	    images      *Optimize image files
 	  clean         Remove build and dist directories
 	  make          Analyze, build and test
 	  analyze
 	    js
 	      hint      Analyze JS with JSHint
-	      style     *Check JS coding style
 	  build
+	    images
+	      png       *Compress png files
 	    l10n        Localize files
 	    html
 	      minify    *Minify HTML
@@ -37,7 +37,6 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    css
 	      less      Compile LESS to CSS
 	      sass      *Compile SASS to CSS
-	      base64    *Inline images into CSS
 	    js
 	      es6       *Transpile ES6 to ES5
 	      minify    Minify JS
@@ -78,6 +77,8 @@ While processor implementations are still in the works, here are some links to t
 
 * Documentation
   * [jsdoc3](https://github.com/jsdoc3/jsdoc)
+* Image compression
+  * [node-tinypng](https://github.com/manuelvanrijn/node-tinypng)
 * HTML minification
   * [html-minifier](https://github.com/kangax/html-minifier)
 * CSS pre-processing
