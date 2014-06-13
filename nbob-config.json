@@ -4,6 +4,8 @@
 		"version": "0",
 		"files": [
 			"**/*",
+			"{{make:js:hint.rcFile}}",
+			"{{make:js:hint.ignoreFile}}",
 			"!build/**/*",
 			"!dist/**/*",
 			"!nbob-config.json",
@@ -34,9 +36,9 @@
 		"files": [ "**/*.less" ]
 	},
 	"make:js:hint": {
-		"files": [ "**/*.js" ],
 		"rcFile": ".jshintrc",
-		"ignoreFile": ".jshintignore"
+		"ignoreFile": ".jshintignore",
+		"files": [ "{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js" ]
 	},
 	"make:js:minify": {
 		"files": [ "{lib,src}/**/*.js{,.map}", "!**/*.min.js" ]
