@@ -74,6 +74,9 @@ While processor implementations are still in the works, here are some links to t
 
 * Documentation
   * [jsdoc3](https://github.com/jsdoc3/jsdoc)
+  * [yuidoc](http://yui.github.io/yuidoc)
+  * [docco](http://jashkenas.github.io/docco)
+  * [doxx](https://github.com/FGRibreau/doxx)
 * Image compression
   * [node-tinypng](https://github.com/manuelvanrijn/node-tinypng)
 * HTML minification
