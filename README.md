@@ -20,7 +20,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	  update
 	    api         *Update EM api directory
 	    doc         *Update doc directory
-	    lib         *Update l10n directory
+	    l10n        Update l10n directory
 	    lib         *Update lib directory
 	    images      *Optimize image files
 	  clean         Remove build and dist directories
