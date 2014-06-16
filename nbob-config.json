@@ -16,7 +16,8 @@
 		"distDir": "dist"
 	},
 	"update:api": {
-		"server": null,
+		"template": "playtotv-define",
+		"host": null,
 		"resources": []
 	},
 	"update:l10n": {

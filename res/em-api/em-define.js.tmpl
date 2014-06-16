@@ -1,0 +1,56 @@
+/**
+ * API generated for server class: <tt>{{class}}</tt>
+ *
+ * <b>DO NOT MODIFY! CHANGES WILL BE OVERWRITTEN THE NEXT TIME YOU UPDATE!</b>
+ *
+ * <b>Note:</b> These are not real functions but method definitions for {@link em.playtotv.Server#call}.
+ *
+ * @name {{moduleName}}
+ * @memberOf {{modulePackage}}
+ * @namespace
+ */
+em.define('{{modulePackage}}.{{moduleName}}', [], function() {
+	// On occassion generated lines can be too long
+	/*jshint maxlen:300*/
+
+	'use strict';
+
+	return {
+		/** @lends {{modulePackage}}.{{moduleName}} */
+{{#join methods separator=",\n"}}
+		/**
+{{~#if requestVars.length}}
+		 * TODO: <b>Request DTO's:</b>
+		 *
+{{~/if}}
+{{~#if responseVar.pojo}}
+		 * TODO: <b>Response data:</b>
+		 *
+{{~/if}}
+		 * @function
+{{~#if params.length}}
+		 * @param {Object} params
+{{~#params}}
+		 * @param { {{~type~}} } {{#if optional}}[{{/if}}params.{{name}}{{#if defaultValue}}={{defaultValue}}{{/if}}{{#if optional}}]{{/if}}{{#if enumValues}} Valid values: {{#join enumValues}}{{.}}{{/join}}{{/if}}
+{{~/params}}
+{{~/if}}
+		 * @returns {Promise} Promise of response data ({{responseVar.type}})
+		 */
+		{{name}}: {
+{{~#replace regexp=",\s+$" by=""}}
+			label: '{{moduleName}}.{{name}}',
+			url: '{{url}}',
+{{~#unless-equal type to="GET"}}
+			type: '{{type}}',
+{{~/unless-equal}}
+{{~#if queryVars.length}}
+			queryKeys: [ {{#join queryVars}}'{{name}}'{{/join}} ],
+{{~/if}}
+{{~#if requestVars.length}}
+			dataKeys: [ {{#join requestVars}}'{{name}}'{{/join}} ],
+{{~/if}}
+{{/replace}}
+		}
+{{~/join}}
+	};
+});
