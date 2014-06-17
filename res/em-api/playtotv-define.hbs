@@ -1,0 +1,75 @@
+/**
+ * Auto generated API: <tt>{{path}}</tt>
+ *
+ * <b>DO NOT MODIFY! CHANGES WILL BE OVERWRITTEN THE NEXT TIME YOU UPDATE!</b>
+ *
+ * <b>Note:</b> These are not real functions but method definitions for
+ * {@link playtotv.server.Server#call}.
+ *
+ * @name {{moduleName}}
+ * @memberOf {{modulePackage}}
+ * @namespace
+ */
+playtotv.define('{{modulePackage}}.{{moduleName}}', [], function() {
+
+	'use strict';
+
+	return {
+		/*jshint maxlen:300*/ // On occassion generated lines can be too long
+
+		/** @lends {{modulePackage}}.{{moduleName}} */
+{{#join methods separator=",\n"}}
+		/**
+{{~#partial "enum-values"}}{{#if enumValues}} Valid values: {{#join enumValues}}'{{.}}'{{/join}}{{/if}}{{/partial}}
+{{~#partial "dto-params"}}
+		 * <ul>
+{{~#.}}
+		 * <li><i>{ {{~type~}} }</i> <b>{{name}}</b>{{> enum-values}}{{#if pojo}}{{#with pojo.fieldsData}}{{> dto-params}}{{/with}}{{/if}}</li>
+{{~/.}}
+		 * </ul>
+{{~/partial}}
+{{~#if requestVars.length}}
+		 * <b>Request DTO's:</b>
+{{~#with requestVars}}{{> dto-params}}{{/with}}
+		 *
+{{~/if}}
+{{~#if responseVar.pojo}}
+		 * <b>Response data:</b>
+{{~#with responseVar.pojo.fieldsData}}{{> dto-params}}{{/with}}
+		 *
+{{~/if}}
+		 * @function
+{{~#if params.length}}
+		 * @param {Object} params
+{{~#params}}
+		 * @param { {{~type~}} } {{#if optional}}[{{/if}}params.{{name}}{{#if defaultValue}}={{defaultValue}}{{/if}}{{#if optional}}]{{/if}}{{> enum-values}}
+{{~/params}}
+{{~/if}}
+		 * @returns {Promise} Promise of response data ({{responseVar.type}})
+		 */
+		{{name}}: {
+{{~#replace regexp=",$"}}{{!-- Strip final comma and newline --}}
+			label: '{{#replace regexp="API$"}}{{moduleName}}{{/replace}}.{{name}}',
+			url: '{{url}}',
+{{~#unless-equal type to="GET"}}
+			type: '{{type}}',
+{{~/unless-equal}}
+{{~#if queryVars.length}}
+			queryKeys: [
+{{~#join queryVars separator=","}}
+				'{{name}}'
+{{~/join}}
+			],
+{{~/if}}
+{{~#if requestVars.length}}
+			dataKeys: [
+{{~#join requestVars separator=","}}
+				'{{name}}'
+{{~/join}}
+			]
+{{~/if}}
+{{~/replace}}
+		}
+{{~/join}}
+	};
+});
