@@ -53,7 +53,7 @@
 		"exports": []
 	},
 	"make:dist": {
-		"files": [ "**/*", "!**/*.less" ]
+		"files": [ "**/*" ]
 	},
 	"server": {
 		"port": 8080
