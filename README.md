@@ -9,7 +9,7 @@ Inspiration is being drawn from other great tools out there like gulp, brunch, g
 # Usage
 Running nbob with invalid or incomplete arguments will result in help being displayed:
 
-	nBob v0.2.0
+	nBob v0.2.4
 
 	Usage: nbob [options] <commands>
 
