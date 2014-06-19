@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-/*jshint node:true*/
-
 var path = require('path');
 var fs = require('fs');
-var lib = path.join(path.dirname(fs.realpathSync(__filename)), '..', 'lib');
-require(lib);
+var nbob = path.join(path.dirname(fs.realpathSync(__filename)), '..', 'lib', 'nbob');
+require(nbob);

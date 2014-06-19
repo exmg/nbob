@@ -23,7 +23,7 @@
   "author": "Ex Machina",
   "license": "MIT",
   "repository": "https://github.com/exmg/nbob.git",
-  "main": "./lib/index",
+  "main": "./lib/nbob",
   "bin": {
     "nbob": "./bin/nbob"
   },
