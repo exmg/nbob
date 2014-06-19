@@ -49,7 +49,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	Options:
 	  -d, --dir     Use specified working directory (default: <current working directory>)
 	  -e, --env     Use specified environment config overrides
-	  -l, --level   Use specified log level (spam/debug/ok/info/warn/error/silent) (default: info)
+	  -l, --level   Use specified log level (spam/debug/info/ok/warn/error/silent) (default: info)
 	  -r, --reload  *Run live-reload server on dist directory
 	  -s, --sync    *Run browser-sync server on dist directory
 
