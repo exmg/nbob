@@ -28,7 +28,7 @@ em.define('{{modulePackage}}.{{moduleName}}', [], function() {
 {{~/.}}
 		 * </ul>
 {{~/partial}}
-{{~#if requestVars.length}}
+{{~#if requestVars.length}}{{!-- TODO: Fix occasional false positives here --}}
 		 * <b>Request DTO's:</b>
 {{~#with requestVars}}{{> dto-params}}{{/with}}
 		 *
