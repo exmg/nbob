@@ -28,9 +28,9 @@ playtotv.define('{{modulePackage}}.{{moduleName}}', [], function() {
 {{~/.}}
 		 * </ul>
 {{~/partial}}
-{{~#if requestVars.length}}
+{{~#if requestDTOs.length}}
 		 * <b>Request DTO's:</b>
-{{~#with requestVars}}{{> dto-params}}{{/with}}
+{{~#with requestDTOs}}{{> dto-params}}{{/with}}
 		 *
 {{~/if}}
 {{~#if responseVar.pojo}}
