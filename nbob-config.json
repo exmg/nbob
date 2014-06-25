@@ -59,7 +59,7 @@
 		"port": 8080
 	},
 	"deploy": {
-		"files": [ "**/*", "!**/*.{gv,less,map}" ],
+		"files": [ "**/*", "!**/*.{gv,map}" ],
 		"region": "eu-west-1",
 		"bucketName": null,
 		"force": false,
