@@ -52,6 +52,12 @@
 		"files": [ "{{make:js:concat.output}}{,.map}" ],
 		"exports": []
 	},
+	"make:substitute:path": {
+		"files": [ "**/*__*__*{,/**/*}" ]
+	},
+	"make:substitute:text": {
+		"files": [ "**/*.{html,css,js,json}" ]
+	},
 	"make:dist": {
 		"files": [ "**/*" ]
 	},

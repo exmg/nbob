@@ -24,9 +24,10 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    lib         *Update lib directory
 	  clean         Remove build and dist directories
 	  make
+	    include     *Include files
 	    l10n        Localize files
 	    images
-	      png       *Compress png images
+	      tinypng   *Tinypng images
 	    html
 	      minify    *Minify HTML
 	      templates Concatenate templates
@@ -40,8 +41,9 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      concat    Concatenate JS files
 	      amd       Optimize EM AMD modules
 	      test      *Run tests
-	    include     *Include files
-	    substitute  *Substitute variables
+	    substitute
+	      path      *Substitute in file paths
+	      text      Substitute in text files
 	    dist        Write files to dist directory
 	  server        Make and host files
 	  deploy        Make and copy to S3
