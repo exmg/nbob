@@ -42,7 +42,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	      amd       Optimize EM AMD modules
 	      test      *Run tests
 	    substitute
-	      path      *Substitute in file paths
+	      path      Substitute in file paths
 	      text      Substitute in text files
 	    dist        Write files to dist directory
 	  server        Make and host files

@@ -53,10 +53,16 @@
 		"exports": []
 	},
 	"make:substitute:path": {
-		"files": [ "**/*__*__*{,/**/*}" ]
+		"files": [ "**/*__*__*{,/**/*}" ],
+		"substitutes": {
+			"PROJECT": "{{project.name}}",
+			"VERSION": "{{project.version}}",
+			"MIN_JS": "{{make:js:concat.output}}"
+		}
 	},
 	"make:substitute:text": {
-		"files": [ "**/*.{html,css,js,json}" ]
+		"files": [ "**/*.{html,css,js,json}" ],
+		"substitutes": "{{> make:substitute:path.substitutes}}"
 	},
 	"make:dist": {
 		"files": [ "**/*" ]
