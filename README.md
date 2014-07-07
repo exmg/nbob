@@ -79,6 +79,7 @@ While processor implementations are still in the works, here are some links to t
   * [doxx](https://github.com/FGRibreau/doxx)
 * Image compression
   * [node-tinypng](https://github.com/manuelvanrijn/node-tinypng)
+  * [node-pngquant-native](https://github.com/xiangshouding/node-pngquant-native)
 * HTML minification
   * [html-minifier](https://github.com/kangax/html-minifier)
 * CSS pre-processing
