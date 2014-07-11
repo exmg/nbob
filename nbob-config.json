@@ -42,7 +42,12 @@
 		"files": [ "{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js" ]
 	},
 	"make:js:minify": {
-		"files": [ "{lib,src}/**/*.js{,.map}", "!**/*.min.js" ]
+		"files": [ "{lib,src}/**/*.js{,.map}", "!**/*.min.js" ],
+		"options": {
+			"compressor": {
+				"drop_debugger": false
+			}
+		}
 	},
 	"make:js:concat": {
 		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
