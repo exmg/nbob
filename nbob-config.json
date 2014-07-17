@@ -31,8 +31,7 @@
 	},
 	"make:html:templates": {
 		"files": [ "templates/*/*.html" ],
-		"ext": ".html",
-		"trim": true
+		"ext": ".html"
 	},
 	"make:css:less": {
 		"files": [ "**/*.less" ]
