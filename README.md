@@ -27,7 +27,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    images
 	      tinypng   *Tinypng images
 	    html
-	      minify    *Minify HTML
+	      minify    Minify HTML
 	      templates Concatenate templates
 	    css
 	      less      Compile LESS to CSS
@@ -80,8 +80,6 @@ While processor implementations are still in the works, here are some links to t
 * Image compression
   * [node-tinypng](https://github.com/manuelvanrijn/node-tinypng)
   * [node-pngquant-native](https://github.com/xiangshouding/node-pngquant-native)
-* HTML minification
-  * [html-minifier](https://github.com/kangax/html-minifier)
 * CSS pre-processing
   * [sass](https://github.com/andrew/node-sass)
 * ES6 transpiling

@@ -29,6 +29,9 @@
 		"files": "{{> update:l10n.files}}",
 		"default": null
 	},
+	"make:html:minify": {
+		"files": [ "**/*.html" ]
+	},
 	"make:html:templates": {
 		"files": [ "templates/*/*.html" ],
 		"ext": ".html"
