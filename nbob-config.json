@@ -32,7 +32,8 @@
 	"make:html:minify": {
 		"files": [ "**/*.html" ],
 		"options": {
-			"conditionals": true
+			"conditionals": true,
+			"quotes": true
 		}
 	},
 	"make:html:templates": {
