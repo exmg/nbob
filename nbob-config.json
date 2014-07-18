@@ -30,7 +30,10 @@
 		"default": null
 	},
 	"make:html:minify": {
-		"files": [ "**/*.html" ]
+		"files": [ "**/*.html" ],
+		"options": {
+			"conditionals": true
+		}
 	},
 	"make:html:templates": {
 		"files": [ "templates/*/*.html" ],
