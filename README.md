@@ -15,6 +15,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	  init
 	    nbob        *Create nbob-config.json
 	    hint        *Create .jshintrc and .jshintignore
+	    aws         *Create ~/.aws/credentials
 	  update
 	    api         Update EM api directory
 	    doc         *Update doc directory
@@ -25,7 +26,7 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 	    include     *Include files
 	    l10n        Localize files
 	    images
-	      tinypng   *Tinypng images
+	      png       *Compress PNG images
 	    html
 	      minify    Minify HTML
 	      templates Concatenate templates
