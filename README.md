@@ -18,7 +18,7 @@ nBob is designed and built with based on the current values:
 # Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.
 
-Then install nBob through NPM; open a terminal or command prompt and then type the following on your command line:
+Then install nBob through NPM; open a terminal or command prompt and type the following on your command line:
 
 On OS X and Linux:
 
@@ -32,6 +32,11 @@ Likewise you can later update nbob by substituting 'install' by 'update'.
 
 # Usage
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
+
+	$ nbob
+	X nbob          No command(s) specified
+
+	nBob v<version>
 
 	Usage: nbob [options] <commands>
 
