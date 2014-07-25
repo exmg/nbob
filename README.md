@@ -1,7 +1,6 @@
-<img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
-
 nBob
 ====
+<img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
 [Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8.
 
 nBob is designed and built with based on the current values:
