@@ -89,7 +89,9 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 Configuration consists of conventional defaults defined in [nbob-config.json](nbob-config.json) which can be extended and overridden by `~/.nbob/nbob-config.json` and `<project>/nbob-config.json`.
 
 *TODO: Document project config*
+
 *TODO: Document config substitution syntax*
+
 *TODO: Document --env and --option config overriding*
 
 # Processors
@@ -123,6 +125,7 @@ Here are some links to third party tools that might be used for pending processo
 # Conventions
 
 *TODO: Document conventions*
+
 *TODO: Show or link to some examples*
 
 # License
