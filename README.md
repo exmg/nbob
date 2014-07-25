@@ -1,13 +1,38 @@
+<img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
+
 nBob
 ====
-nbob or nBob, short for Node Bob, is Ex Machina's frontend build tool.
+[Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8.
 
-It follows in the footsteps of our old Rhino JS based build tool Bob with much improved performance and many more and better third party tool integrations thanks to Node and it's plentiful eco-system.
+nBob is designed and built with based on the current values:
 
-Inspiration is being drawn from other great tools out there like gulp, brunch, grunt, yeoman and mimosa.
+* DRY (Do not Repeat Yourself)
+  * Minimal project configuration
+  * Efficient Processor plugin API
+* Performance
+  * Intermediate build artifact cache enables incremental builds
+  * Processor Batches can be distributed across multiple CPU cores
+* Predictability
+  * Develop and test with exact same artifacts as in production (source maps are used for debugging)
+  * Build on request (e.g: browser reload), not on save (optionally you can use live reload)
+
+# Installation
+Start by [installing Node](http://nodejs.org) if you don't have that yet.
+
+Then install nBob through NPM; open a terminal or command prompt and then type the following on your command line:
+
+On OS X and Linux:
+
+	$ sudo npm install -g nbob
+
+On Windows:
+
+	> npm install -g nbob
+
+Likewise you can later update nbob by substituting 'install' by 'update'.
 
 # Usage
-Running nbob with invalid or incomplete arguments will result in help being displayed:
+Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
 
 	Usage: nbob [options] <commands>
 
@@ -64,15 +89,17 @@ Running nbob with invalid or incomplete arguments will result in help being disp
 # Config
 Configuration consists of conventional defaults defined in [nbob-config.json](nbob-config.json) which can be extended and overridden by `~/.nbob/nbob-config.json` and `<project>/nbob-config.json`.
 
-*TODO: Document configuration options and defaults*
+*TODO: Document project config*
+*TODO: Document config substitution syntax*
+*TODO: Document --env and --option config overriding*
 
 # Processors
-Please see processor source files for more information on how they work.
-Also see [package.json](package.json) for exact dependencies.
+For now, please see processor source files for more information on how they work and [package.json](package.json) for links to third party dependencies.
 
-Later we may add support for showing detailed help about a specified command (e.g: nbob -h build:js:minify).
+*TODO: Add support for showing processor help (e.g: nbob -h make:js:minify) and copy output here for convenience*
 
-While processor implementations are still in the works, here are some links to third party tools that might be used:
+## Pending
+Here are some links to third party tools that might be used for pending processor implementations:
 
 * Documentation
   * [jsdoc3](https://github.com/jsdoc3/jsdoc)
@@ -93,6 +120,11 @@ While processor implementations are still in the works, here are some links to t
   * [tiny-lr](https://github.com/mklabs/tiny-lr)
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
+
+# Conventions
+
+*TODO: Document conventions*
+*TODO: Show or link to some examples*
 
 # License
 Copyright (c) 2014 [Ex Machina](http://exmg.tv).
