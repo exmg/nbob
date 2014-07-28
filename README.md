@@ -1,5 +1,4 @@
-nBob
-====
+#nBob
 <img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
 [Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8.
 
@@ -15,7 +14,10 @@ nBob is designed and built based on the following values:
   * Develop and test with exact same artifacts as in production (source maps are used for debugging)
   * Build on request (e.g: browser reload), not on save (optionally you can use live reload)
 
-# Installation
+## Changelog
+See: [CHANGELOG.md](CHANGELOG.md)
+
+## Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.
 
 Then install nBob through NPM; open a terminal or command prompt and type the following on your command line:
@@ -30,7 +32,7 @@ On Windows:
 
 Likewise you can later update nbob by substituting 'install' by 'update'.
 
-# Usage
+## Usage
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
 
 	$ nbob
@@ -90,14 +92,14 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	Full length:    nbob --env=staging update:api deploy
 	Abbreviated:    nbob -e staging u:a d
 
-# Config
+## Config
 Configuration consists of nBob package defaults ([nbob-config.json](nbob-config.json)) which can be extended and overridden by user defaults (`~/.nbob/nbob-config.json`) and finally project configuration (`<project>/nbob-config.json`).
 
 These configuration files are JSON files with keys generally referring to the command processors that they configure.
 
 Most configuration sections include a `files` key that specifies an array of glob patterns for files to be included and excluded (by starting glob string with an exclamation mark `!`). For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
 
-## Project config
+### Project config
 One special configuration key is `project`. You should always define project name and version in your project configuration file and optionally you might like to exclude some files or directories:
 
 	"project": {
@@ -106,7 +108,7 @@ One special configuration key is `project`. You should always define project nam
 		"files": [ "!res/theme-b/**/*" ]
 	},
 
-## Config substitution
+### Config substitution
 Configuration values can also contain substitution syntax, inspired by Mustache templating, p.e:
 
 	"make:js:concat": {
@@ -120,7 +122,7 @@ Configuration values can also contain substitution syntax, inspired by Mustache 
 
 Results in project name and version being filled in to generate the JS concat output filename and the AMD using that output filename as input.
 
-## Environment configs
+### Environment configs
 Another special configuration key is `envConfigMap`. This can be used to specify a number of named environment configs. When you specify the name of such an environment config using the `--env` option your config will be extended with that environment config, p.e:
 
 	"deploy": {
@@ -136,15 +138,15 @@ Another special configuration key is `envConfigMap`. This can be used to specify
 
 Will result with `$ nbob d` deploying to dev.playtotv.com and `$ nbob -e staging d` deploying to staging.playtotv.com.
 
-## Command line override
+### Command line override
 If you want to quickly override a single configuration value you can use the `--option` command line option, p.e: `$ nbob -o server.port=8081 s` in case you want to run multiple nbob servers or `$ nbob -o deploy.force=true d` in case you want to force a deploy of all files (not just the changed ones).
 
-# Processors
+## Processors
 For now, please see processor source files for more information on how they work and [package.json](package.json) for links to third party dependencies.
 
 *TODO: Add support for showing processor help (e.g: nbob -h make:js:minify) and copy output here for convenience*
 
-## Pending
+### Pending
 Here are some links to third party tools that might be used for pending processor implementations:
 
 * Documentation
@@ -167,7 +169,7 @@ Here are some links to third party tools that might be used for pending processo
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
 
-# Default conventions
+## Default conventions
 nBob uses the following filename and directory conventions:
 
 * `l10n/*.json` - Localization dictionary files
@@ -179,7 +181,7 @@ nBob uses the following filename and directory conventions:
 * `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
 * `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
 
-# License
+## License
 Copyright (c) 2014 [Ex Machina](http://exmg.tv).
 
 Released under MIT License. Enjoy and Fork!
