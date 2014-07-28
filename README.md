@@ -3,7 +3,7 @@ nBob
 <img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
 [Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8.
 
-nBob is designed and built with based on the current values:
+nBob is designed and built based on the following values:
 
 * DRY (Do not Repeat Yourself)
   * Minimal project configuration
@@ -91,13 +91,53 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	Abbreviated:    nbob -e staging u:a d
 
 # Config
-Configuration consists of conventional defaults defined in [nbob-config.json](nbob-config.json) which can be extended and overridden by `~/.nbob/nbob-config.json` and `<project>/nbob-config.json`.
+Configuration consists of nBob package defaults ([nbob-config.json](nbob-config.json)) which can be extended and overridden by user defaults (`~/.nbob/nbob-config.json`) and finally project configuration (`<project>/nbob-config.json`).
 
-*TODO: Document project config*
+These configuration files are JSON files with keys generally referring to the command processors that they configure.
 
-*TODO: Document config substitution syntax*
+Most configuration sections include a `files` key that specifies an array of glob patterns for files to be included and excluded (by starting glob string with an exclamation mark `!`). For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
 
-*TODO: Document --env and --option config overriding*
+## Project config
+One special configuration key is `project`. You should always define project name and version in your project configuration file and optionally you might like to exclude some files or directories:
+
+	"project": {
+		"name": "awesomo",
+		"version": "1.2.3",
+		"files": [ "!res/theme-b/**/*" ]
+	},
+
+## Config substitution
+Configuration values can also contain substitution syntax, inspired by Mustache templating, p.e:
+
+	"make:js:concat": {
+		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
+		"output": "{{project.name}}-{{project.version}}.min.js"
+	},
+	"make:js:amd": {
+		"files": [ "{{make:js:concat.output}}{,.map}" ],
+		"exports": []
+	},
+
+Results in project name and version being filled in to generate the JS concat output filename and the AMD using that output filename as input.
+
+## Environment configs
+Another special configuration key is `envConfigMap`. This can be used to specify a number of named environment configs. When you specify the name of such an environment config using the `--env` option your config will be extended with that environment config, p.e:
+
+	"deploy": {
+		"bucketName": "dev.playtotv.com"
+	},
+	"envConfigMap": {
+		"staging": {
+			"deploy": {
+				"bucketName": "staging.playtotv.com"
+			}
+		}
+	}
+
+Will result with `$ nbob d` deploying to dev.playtotv.com and `$ nbob -e staging d` deploying to staging.playtotv.com.
+
+## Command line override
+If you want to quickly override a single configuration value you can use the `--option` command line option, p.e: `$ nbob -o server.port=8081 s` in case you want to run multiple nbob servers or `$ nbob -o deploy.force=true d` in case you want to force a deploy of all files (not just the changed ones).
 
 # Processors
 For now, please see processor source files for more information on how they work and [package.json](package.json) for links to third party dependencies.
@@ -127,11 +167,17 @@ Here are some links to third party tools that might be used for pending processo
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
 
-# Conventions
+# Default conventions
+nBob uses the following filename and directory conventions:
 
-*TODO: Document conventions*
-
-*TODO: Show or link to some examples*
+* `l10n/*.json` - Localization dictionary files
+* `lib/**/*.js` (and optionally `*.map`) - External JavaScript files from other projects etc. to be included into this project
+* `src/**/*.js` - This project's JavaScript files
+* `templates/**/*.html` - HTML template files to be compiled into directory JSON files
+* `.jshintrc` and `.jshintignore` - JSHint project configuration files
+* `**/*.{html,css,js,json,less}` - Respectively HTML/CSS/JS/JSON/LESS files (e.g: use extensions)
+* `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
+* `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
 
 # License
 Copyright (c) 2014 [Ex Machina](http://exmg.tv).
