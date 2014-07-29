@@ -2,17 +2,18 @@
 <img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
 [Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8.
 
-## Table of Contents
-
 * [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Config](#config)
 * [Processors](#processors)
 * [Conventions](#conventions)
-* [Changelog](#changelog)
-* [License](#license)
 
+See [the releases page](https://github.com/exmg/nbob/releases) for a changelog.
+
+[MIT License](LICENSE) and copyright [Ex Machina](http://exmg.tv).
+
+<span style="float:right;">[Top](#nbob)</span>
 ## About
 nBob is designed and built based on the following values:
 
@@ -26,6 +27,7 @@ nBob is designed and built based on the following values:
   * Single mode (no development vs production), source maps can be used for debugging
   * Just like plain HTML/CSS/JS, build on browser reload and show any errors there as well
 
+<span style="float:right;">[Top](#nbob)</span>
 ## Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.
 
@@ -41,6 +43,7 @@ On Windows:
 
 If an update is available then nBob will notify you.
 
+<span style="float:right;">[Top](#nbob)</span>
 ## Usage
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
 
@@ -102,7 +105,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 
 	X nbob          No command(s) specified
 
-
+<span style="float:right;">[Top](#nbob)</span>
 ## Config
 Configuration consists of nBob package defaults ([nbob-config.json](nbob-config.json)) which can be extended and overridden by user defaults (`~/.nbob/nbob-config.json`) and finally project configuration (`<project>/nbob-config.json`).
 
@@ -152,6 +155,7 @@ Will result with `$ nbob d` deploying to dev.playtotv.com and `$ nbob -e staging
 ### Command line override
 If you want to quickly override a single configuration value you can use the `--option` command line option, p.e: `$ nbob -o server.port=8081 s` in case you want to run multiple nbob servers or `$ nbob -o deploy.force=true d` in case you want to force a deploy of all files (not just the changed ones).
 
+<span style="float:right;">[Top](#nbob)</span>
 ## Processors
 For now, please see processor source files for more information on how they work and [package.json](package.json) for links to third party dependencies.
 
@@ -180,6 +184,7 @@ Here are some links to third party tools that might be used for pending processo
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
 
+<span style="float:right;">[Top](#nbob)</span>
 ## Conventions
 nBob uses the following filename and directory conventions:
 
@@ -191,9 +196,3 @@ nBob uses the following filename and directory conventions:
 * `**/*.{html,css,js,json,less}` - Respectively HTML/CSS/JS/JSON/LESS files (e.g: use extensions)
 * `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
 * `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
-
-## Changelog
-See [the releases page](https://github.com/exmg/nbob/releases).
-
-## License
-[MIT License](LICENSE) and copyright [Ex Machina](http://exmg.tv).
