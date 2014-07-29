@@ -15,7 +15,7 @@ nBob is designed and built based on the following values:
   * Build on request (e.g: browser reload), not on save (optionally you can use live reload)
 
 ## Changelog
-See: [CHANGELOG.md](CHANGELOG.md)
+See: [releases page](https://github.com/exmg/nbob/releases)
 
 ## Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.
@@ -30,7 +30,7 @@ On Windows:
 
 	> npm install -g nbob
 
-Likewise you can later update nbob by substituting 'install' by 'update'.
+If an update is available then nBob will notify you.
 
 ## Usage
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
