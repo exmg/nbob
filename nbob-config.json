@@ -84,6 +84,7 @@
 	},
 	"deploy": {
 		"files": [ "**/*", "!**/*.{gv,map}" ],
+		"keep": [],
 		"region": "eu-west-1",
 		"bucketName": null,
 		"force": false,
