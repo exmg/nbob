@@ -15,7 +15,7 @@ nBob is designed and built based on the following values:
   * Just like plain HTML/CSS/JS, build on browser reload and show any errors there as well
 
 ## Changelog
-See: [releases page](https://github.com/exmg/nbob/releases)
+See: [releases page](https://github.com/exmg/nbob/releases).
 
 ## Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.

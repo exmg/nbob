@@ -1,7 +1,5 @@
 'use strict';
 
-require('graceful-fs');
-
 var start = Date.now();
 
 var jshint = require('jshint').JSHINT;
