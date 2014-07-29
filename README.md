@@ -36,7 +36,6 @@ If an update is available then nBob will notify you.
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
 
 	$ nbob
-	X nbob          No command(s) specified
 
 	nBob v<version>
 
@@ -91,6 +90,9 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	Note: Like options, commands can be abbreviated, per example:
 	Full length:    nbob --env=staging update:api deploy
 	Abbreviated:    nbob -e staging u:a d
+
+	X nbob          No command(s) specified
+
 
 ## Config
 Configuration consists of nBob package defaults ([nbob-config.json](nbob-config.json)) which can be extended and overridden by user defaults (`~/.nbob/nbob-config.json`) and finally project configuration (`<project>/nbob-config.json`).
