@@ -11,8 +11,8 @@ nBob is designed and built based on the following values:
   * Intermediate build artifact cache enables incremental builds
   * Processor Batches can be distributed across multiple CPU cores
 * Predictability
-  * Develop and test with exact same artifacts as in production (source maps are used for debugging)
-  * Build on request (e.g: browser reload), not on save (optionally you can use live reload)
+  * Single mode (no development vs production), source maps can be used for debugging
+  * Just like plain HTML/CSS/JS, build on browser reload and show any errors there as well
 
 ## Changelog
 See: [releases page](https://github.com/exmg/nbob/releases)
