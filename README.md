@@ -2,6 +2,18 @@
 <img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
 [Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8.
 
+## Table of Contents
+
+* [About](#about)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Config](#config)
+* [Processors](#processors)
+* [Conventions](#conventions)
+* [Changelog](#changelog)
+* [License](#license)
+
+## About
 nBob is designed and built based on the following values:
 
 * DRY (Do not Repeat Yourself)
@@ -13,9 +25,6 @@ nBob is designed and built based on the following values:
 * Predictability
   * Single mode (no development vs production), source maps can be used for debugging
   * Just like plain HTML/CSS/JS, build on browser reload and show any errors there as well
-
-## Changelog
-See: [releases page](https://github.com/exmg/nbob/releases).
 
 ## Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.
@@ -171,7 +180,7 @@ Here are some links to third party tools that might be used for pending processo
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
 
-## Default conventions
+## Conventions
 nBob uses the following filename and directory conventions:
 
 * `l10n/*.json` - Localization dictionary files
@@ -183,6 +192,8 @@ nBob uses the following filename and directory conventions:
 * `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
 * `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
 
+## Changelog
+See [the releases page](https://github.com/exmg/nbob/releases).
+
 ## License
-Copyright (c) 2014 [Ex Machina](http://exmg.tv).
-Released under [MIT License](LICENSE). Enjoy and Fork!
+[MIT License](LICENSE) and copyright [Ex Machina](http://exmg.tv).
