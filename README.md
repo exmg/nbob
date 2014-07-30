@@ -98,6 +98,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	  -o, --option  Override specified option in config (e.g: -o server.port=8081)
 	  -r, --reload  *Run live-reload server on dist directory
 	  -s, --sync    *Run browser-sync server on dist directory
+	  -x, --xmulti  Disable multi-core processing
 
 	*) Not yet implemented
 
