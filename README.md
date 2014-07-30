@@ -27,7 +27,7 @@ nBob is designed and built based on the following values:
   * Single mode (no development vs production), source maps can be used for debugging
   * Just like plain HTML/CSS/JS, build on browser reload and show any errors there as well
 
-[Top](#nbob)
+[▴Top](#nbob)
 
 ## Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.
@@ -44,7 +44,7 @@ On Windows:
 
 If an update is available then nBob will notify you.
 
-[Top](#nbob)
+[▴Top](#nbob)
 
 ## Usage
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
@@ -107,7 +107,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 
 	X nbob          No command(s) specified
 
-[Top](#nbob)
+[▴Top](#nbob)
 
 ## Config
 Configuration consists of nBob package defaults ([nbob-config.json](nbob-config.json)) which can be extended and overridden by user defaults (`~/.nbob/nbob-config.json`) and finally project configuration (`<project>/nbob-config.json`).
@@ -158,7 +158,7 @@ Will result with `$ nbob d` deploying to dev.playtotv.com and `$ nbob -e staging
 ### Command line override
 If you want to quickly override a single configuration value you can use the `--option` command line option, p.e: `$ nbob -o server.port=8081 s` in case you want to run multiple nbob servers or `$ nbob -o deploy.force=true d` in case you want to force a deploy of all files (not just the changed ones).
 
-[Top](#nbob)
+[▴Top](#nbob)
 
 ## Processors
 For now, please see processor source files for more information on how they work and [package.json](package.json) for links to third party dependencies.
@@ -188,7 +188,7 @@ Here are some links to third party tools that might be used for pending processo
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
 
-[Top](#nbob)
+[▴Top](#nbob)
 
 ## Conventions
 nBob uses the following filename and directory conventions:
@@ -201,3 +201,5 @@ nBob uses the following filename and directory conventions:
 * `**/*.{html,css,js,json,less}` - Respectively HTML/CSS/JS/JSON/LESS files (e.g: use extensions)
 * `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
 * `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
+
+[▴Top](#nbob)
