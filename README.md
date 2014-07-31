@@ -120,11 +120,15 @@ The active configuration can be further influenced by specifying options ([--env
 Most configuration sections include a `files` key that specifies an array of glob patterns for files to be included and excluded (by starting glob string with an exclamation mark `!`).
 For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
 
+[▴TOC](#table-of-contents)
+
 ### Config extension
 When one config object is extended by another then any new properties are added and any existing properties are overridden.
 
 When one config array is extended by another then all items from the other array are added to the first.
 However, when the extending array starts with the special item `!!` then the original array is first emptied, effectively replacing the array.
+
+[▴TOC](#table-of-contents)
 
 ### Config substitution
 Configuration values can contain substitution syntax, inspired by Mustache templating.
@@ -145,6 +149,8 @@ Results in project name and version being filled in to generate the JS concat ou
 **Note:** Substitution by non-string config object values is currently also supported using Mustache partial sytax, p.e: `"files": "{{> update:l10n.files}}"`.
 It is however a deprecated feature since it does not combine well with config extension and will be removed in the future.
 
+[▴TOC](#table-of-contents)
+
 ### nBob config
 The special configuration section with key `nbob` has the following options:
 
@@ -157,6 +163,8 @@ The special configuration section with key `nbob` has the following options:
 	},
 
 Adding this section to your user config file (`~/.nbob/nbob-config.json`) would result in all of your builds defaulting to not using multi-core processing. This can be useful if you have found that the overhead does not outweigh the improved processing speed on your system.
+
+[▴TOC](#table-of-contents)
 
 ### Project config
 The special configuration section with key `project` has the following options:
@@ -176,6 +184,8 @@ The special configuration section with key `project` has the following options:
 	},
 
 Results in nbob-config.json being un-excluded and the unused-theme files being excluded from all processing.
+
+[▴TOC](#table-of-contents)
 
 ### Environment config
 The special configuration section with key `envConfigMap` can be used to specify a number of named environment configs.
@@ -206,6 +216,8 @@ When you specify the name of such an environment using the `--env` option your c
 
 Will result with `$ nbob d` deploying to dev.playtotv.com and `$ nbob -e staging d` deploying to staging.playtotv.com.
 It will simultaneously substitute `__SERVER__` by `dev-backend.playtotv.com` or `staging-backend.playtotv.com` in their respective environment artifacts.
+
+[▴TOC](#table-of-contents)
 
 ### Config option
 If you want to quickly override a single configuration value you can use the `--option` command line option.
@@ -244,6 +256,8 @@ Uses the generic `concat` processor to concatenate JavaScript files and their so
 *TODO: Add support for showing processor help (e.g: nbob -h make:js:minify) and copy output here*
 
 For now, please see processor source files for more information on how they work and [package.json](package.json) for links to used third party dependencies.
+
+[▴TOC](#table-of-contents)
 
 ### Pending processors
 Here are some links to third party tools that might be used for pending processor implementations:
