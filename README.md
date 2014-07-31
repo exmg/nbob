@@ -153,7 +153,15 @@ It is however a deprecated feature since it does not combine well with config ex
 ### nBob config
 The special configuration section with key `nbob` has the following options:
 
-* `multiCore` - Toggles multi-core processing on or off (sometimes single-core is faster)
+* `multiCore = true` - Toggles multi-core processing on or off
+
+**Example:**
+
+	"nbob": {
+		"multiCore": false
+	},
+
+Adding this section to your user config file (`~/.nbob/nbob-config.json`) would result in all of your builds defaulting to not using multi-core processing. This can be useful if you have found that the overhead does not outweigh the improved processing speed on your system.
 
 ### Project config
 The special configuration section with key `project` has the following options:
