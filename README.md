@@ -1,33 +1,39 @@
 #nBob
 <img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
-[Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8.
+[Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8, focussing on:
+
+* Ease of use
+  * Includes local build server
+  * Shows build errors directly in browser
+* Performance
+  * Incremental builds
+  * Multi-core processing
+* Predictability
+  * Single mode (no development vs production)
+  * Build on browser reload
+* Do not Repeat Yourself
+  * Minimal project configuration
+  * Efficient Processor plugin API
+
+See the [releases page](https://github.com/exmg/nbob/releases) for a changelog.
+
+Licensed under [MIT License](LICENSE) and Copyright [Ex Machina](http://exmg.tv).
+
+#### Table of Contents
 
 * [About](#about)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Config](#config)
+  * [Config extension](#config-extension)
+  * [Config substitution](#config-substitutions)
+  * [nBob config](#nbob-config)
+  * [Project config](#project-config)
+  * [Environment config](#environment-config)
+  * [Config option](#config-option)
 * [Processors](#processors)
+  * [Pending processors](#pending-processors)
 * [Conventions](#conventions)
-
-See [the releases page](https://github.com/exmg/nbob/releases) for a changelog.
-
-[MIT License](LICENSE) and copyright [Ex Machina](http://exmg.tv).
-
-
-## About
-nBob is designed and built based on the following values:
-
-* DRY (Do not Repeat Yourself)
-  * Minimal project configuration
-  * Efficient Processor plugin API
-* Performance
-  * Intermediate build artifact cache enables incremental builds
-  * Processor Batches can be distributed across multiple CPU cores
-* Predictability
-  * Single mode (no development vs production), source maps can be used for debugging
-  * Just like plain HTML/CSS/JS, build on browser reload and show any errors there as well
-
-[▴Top](#nbob)
 
 ## Installation
 Start by [installing Node](http://nodejs.org) if you don't have that yet.
@@ -44,7 +50,7 @@ On Windows:
 
 If an update is available then nBob will notify you.
 
-[▴Top](#nbob)
+[▴TOC](#table-of-contents)
 
 ## Usage
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
@@ -98,7 +104,6 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	  -o, --option  Override specified option in config (e.g: -o server.port=8081)
 	  -r, --reload  *Run live-reload server on dist directory
 	  -s, --sync    *Run browser-sync server on dist directory
-	  -x, --xmulti  Disable multi-core processing
 
 	*) Not yet implemented
 
@@ -108,26 +113,28 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 
 	X nbob          No command(s) specified
 
-[▴Top](#nbob)
+[▴TOC](#table-of-contents)
 
 ## Config
 Configuration consists of nBob package defaults ([nbob-config.json](nbob-config.json)) which can be extended and overridden by user defaults (`~/.nbob/nbob-config.json`) and finally project configuration (`<project>/nbob-config.json`).
 
 These configuration files are JSON files with keys generally referring to the command processors that they configure.
 
-Most configuration sections include a `files` key that specifies an array of glob patterns for files to be included and excluded (by starting glob string with an exclamation mark `!`). For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
+The active configuration can be further influenced by specifying options ([--env](#environment-config) and [--option](#config-option)) on your command line.
 
-### Project config
-One special configuration key is `project`. You should always define project name and version in your project configuration file and optionally you might like to exclude some files or directories:
+Most configuration sections include a `files` key that specifies an array of glob patterns for files to be included and excluded (by starting glob string with an exclamation mark `!`).
+For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
 
-	"project": {
-		"name": "awesomo",
-		"version": "1.2.3",
-		"files": [ "!res/theme-b/**/*" ]
-	},
+### Config extension
+When one config object is extended by another, any new properties are added and any existing properties are overridden.
+
+Whe one config array is extended by another, all items from the other array are added to the first.
+However, when the extending array starts with the special item `!!` then the original array is first emptied, effectively replacing the array.
 
 ### Config substitution
-Configuration values can also contain substitution syntax, inspired by Mustache templating, p.e:
+Configuration values can contain substitution syntax, inspired by Mustache templating.
+
+**Example:**
 
 	"make:js:concat": {
 		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
@@ -140,14 +147,54 @@ Configuration values can also contain substitution syntax, inspired by Mustache 
 
 Results in project name and version being filled in to generate the JS concat output filename and the AMD using that output filename as input.
 
-### Environment configs
-Another special configuration key is `envConfigMap`. This can be used to specify a number of named environment configs. When you specify the name of such an environment config using the `--env` option your config will be extended with that environment config, p.e:
+**Note:** Substitution by non-string config object values is currently also supported using Mustache partial sytax, p.e: `"files": "{{> update:l10n.files}}"`.
+It is however a deprecated feature since it does not combine well with config extension and will be removed in the future.
 
+### nBob config
+The special configuration section with key `nbob` has the following options:
+
+* `multiCore` - Toggles multi-core processing on or off (sometimes single-core is faster)
+
+### Project config
+The special configuration section with key `project` has the following options:
+
+* `name = "Unnamed"` - Used to name build artifacts, you should define this in your project config file
+* `version = "0"` - Used to name build artifacts, you should define this in your project config file
+* `files` - Can be used to exclude (or un-exclude) certain files or directories
+* `buildDir = "build"` - Name of project subdirectory where to write build artifacts
+* `distDir = "dist"` - Name of project subdirectory where to write distribution artifacts
+
+**Example:**
+
+	"project": {
+		"name": "awesomo",
+		"version": "1.2.3",
+		"files": [ "!!nbob-config.json", "!res/unused-theme/**/*" ]
+	},
+
+Results in nbob-config.json being un-excluded and the unused-theme files being excluded from all processing.
+
+### Environment config
+The special configuration section with key `envConfigMap` can be used to specify a number of named environment configs.
+When you specify the name of such an environment using the `--env` option your config will be extended with that environment config.
+
+**Example:**
+
+	"make:substitute:path": {
+		"substitutes": {
+			"SERVER": "dev-backend.playtotv.com"
+		}
+	},
 	"deploy": {
 		"bucketName": "dev.playtotv.com"
 	},
 	"envConfigMap": {
 		"staging": {
+			"make:substitute:path": {
+				"substitutes": {
+					"SERVER": "staging-backend.playtotv.com"
+				}
+			},
 			"deploy": {
 				"bucketName": "staging.playtotv.com"
 			}
@@ -155,18 +202,24 @@ Another special configuration key is `envConfigMap`. This can be used to specify
 	}
 
 Will result with `$ nbob d` deploying to dev.playtotv.com and `$ nbob -e staging d` deploying to staging.playtotv.com.
+It will simultaneously substitute `__SERVER__` by `dev-backend.playtotv.com` or `staging-backend.playtotv.com` in their respective environment artifacts.
 
-### Command line override
-If you want to quickly override a single configuration value you can use the `--option` command line option, p.e: `$ nbob -o server.port=8081 s` in case you want to run multiple nbob servers or `$ nbob -o deploy.force=true d` in case you want to force a deploy of all files (not just the changed ones).
+### Config option
+If you want to quickly override a single configuration value you can use the `--option` command line option.
 
-[▴Top](#nbob)
+**Examples:**
+
+* `$ nbob -o server.port=8081 s` - In case you want to run multiple nbob servers
+* `$ nbob -o deploy.force=true d` - In case you want to force a deploy of all files (not just the changed ones)
+
+[▴TOC](#table-of-contents)
 
 ## Processors
 For now, please see processor source files for more information on how they work and [package.json](package.json) for links to third party dependencies.
 
 *TODO: Add support for showing processor help (e.g: nbob -h make:js:minify) and copy output here for convenience*
 
-### Pending
+### Pending processors
 Here are some links to third party tools that might be used for pending processor implementations:
 
 * Documentation
@@ -189,7 +242,7 @@ Here are some links to third party tools that might be used for pending processo
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
 
-[▴Top](#nbob)
+[▴TOC](#table-of-contents)
 
 ## Conventions
 nBob uses the following filename and directory conventions:
@@ -203,4 +256,4 @@ nBob uses the following filename and directory conventions:
 * `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
 * `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
 
-[▴Top](#nbob)
+[▴TOC](#table-of-contents)
