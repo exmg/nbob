@@ -1,4 +1,7 @@
 {
+	"nbob": {
+		"multiCore": true
+	},
 	"project": {
 		"name": "Unnamed",
 		"version": "0",
