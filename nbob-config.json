@@ -18,21 +18,61 @@
 		"buildDir": "build",
 		"distDir": "dist"
 	},
+	"init:nbob": {
+		"description": "Create nbob-config.json",
+		"processor": null
+	},
+	"init:hint": {
+		"description": "Create .jshintrc and .jshintignore",
+		"processor": null
+	},
+	"init:aws": {
+		"description": "Create ~/.aws/credentials",
+		"processor": null
+	},
 	"update:api": {
+		"description": "Update EM api directory",
+		"processor": "em-api",
 		"template": "playtotv-define",
 		"host": null,
 		"resources": []
 	},
+	"update:doc": {
+		"description": "Update doc directory",
+		"processor": null
+	},
 	"update:l10n": {
+		"description": "Update l10n directory",
+		"processor": "l10n-update",
 		"locales": "l10n/*.json",
 		"files": [ "{{update:l10n.locales}}", "**/*-l10n.html", "**/*-l10n/**/*.html" ]
 	},
+	"update:lib": {
+		"description": "Update lib directory",
+		"processor": null
+	},
+	"clean": {
+		"description": "Remove build and dist directories",
+		"processor": "clean"
+	},
+	"make:include": {
+		"description": "Include files",
+		"processor": null
+	},
 	"make:l10n": {
+		"description": "Localize files",
+		"processor": "l10n-make",
 		"locales": "{{update:l10n.locales}}",
 		"files": "{{> update:l10n.files}}",
 		"default": null
 	},
+	"make:images:png": {
+		"description": "Compress PNG images",
+		"processor": null
+	},
 	"make:html:minify": {
+		"description": "Minify HTML",
+		"processor": "html-minify",
 		"files": [ "**/*.html" ],
 		"options": {
 			"conditionals": true,
@@ -40,18 +80,34 @@
 		}
 	},
 	"make:html:templates": {
+		"description": "Concatenate templates",
+		"processor": "directory",
 		"files": [ "templates/*/*.html" ],
 		"ext": ".html"
 	},
 	"make:css:less": {
+		"description": "Compile LESS to CSS",
+		"processor": "less",
 		"files": [ "**/*.less" ]
 	},
+	"make:css:sass": {
+		"description": "Compile SASS to CSS",
+		"processor": null
+	},
 	"make:js:hint": {
+		"description": "Analyze JS with JSHint",
+		"processor": "jshint",
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore",
 		"files": [ "{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js" ]
 	},
+	"make:js:es6": {
+		"description": "Transpile ES6 to ES5",
+		"processor": null
+	},
 	"make:js:minify": {
+		"description": "Minify JS",
+		"processor": "uglify",
 		"files": [ "{lib,src}/**/*.js{,.map}", "!**/*.min.js" ],
 		"options": {
 			"compressor": {
@@ -60,14 +116,24 @@
 		}
 	},
 	"make:js:concat": {
+		"description": "Concatenate JS files",
+		"processor": "concat",
 		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
 		"output": "{{project.name}}-{{project.version}}.min.js"
 	},
 	"make:js:amd": {
+		"description": "Optimize EM AMD modules",
+		"processor": "em-amd",
 		"files": [ "{{make:js:concat.output}}{,.map}" ],
 		"exports": []
 	},
+	"make:js:test": {
+		"description": "Run tests",
+		"processor": null
+	},
 	"make:substitute:path": {
+		"description": "Substitute in file paths",
+		"processor": "substitute-path",
 		"files": [ "**/*__*__*{,/**/*}" ],
 		"substitutes": {
 			"PROJECT": "{{project.name}}",
@@ -76,16 +142,25 @@
 		}
 	},
 	"make:substitute:text": {
+		"description": "Substitute in text files",
+		"processor": "substitute-text",
 		"files": [ "**/*.{html,css,js,json}" ],
 		"substitutes": "{{> make:substitute:path.substitutes}}"
 	},
 	"make:dist": {
+		"description": "Write files to dist directory",
+		"processor": "dist",
 		"files": [ "**/*" ]
 	},
 	"server": {
+		"description": "Make and host files",
+		"processor": "server",
 		"port": 8080
 	},
 	"deploy": {
+		"description": "Make and copy to S3",
+		"processor": "deploy-s3",
+		"dependencies": [ "make" ],
 		"files": [ "**/*", "!**/*.{gv,map}" ],
 		"keep": [],
 		"region": "eu-west-1",

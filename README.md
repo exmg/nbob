@@ -2,26 +2,24 @@
 <img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
 [Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8, focussing on:
 
-* Ease of use
+* **Ease of use**
   * Includes local build server
   * Shows build errors directly in browser
-* Performance
+* **Performance**
   * Incremental builds
   * Multi-core processing
-* Predictability
+* **Predictability**
   * Single mode (no development vs production)
   * Build on browser reload
-* Do not Repeat Yourself
+* **Conciseness**
   * Minimal project configuration
-  * Efficient Processor plugin API
+  * Efficient processor plugin API
 
 See the [releases page](https://github.com/exmg/nbob/releases) for a changelog.
 
 Licensed under [MIT License](LICENSE) and Copyright [Ex Machina](http://exmg.tv).
 
-#### Table of Contents
-
-* [About](#about)
+## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [Config](#config)
@@ -31,6 +29,7 @@ Licensed under [MIT License](LICENSE) and Copyright [Ex Machina](http://exmg.tv)
   * [Project config](#project-config)
   * [Environment config](#environment-config)
   * [Config option](#config-option)
+* [Commands](#commands)
 * [Processors](#processors)
   * [Pending processors](#pending-processors)
 * [Conventions](#conventions)
@@ -54,8 +53,6 @@ If an update is available then nBob will notify you.
 
 ## Usage
 Running nbob in your terminal with invalid or incomplete arguments will result in it's help being displayed:
-
-	$ nbob
 
 	nBob v<version>
 
@@ -111,14 +108,12 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	Full length:    nbob --env=staging update:api deploy
 	Abbreviated:    nbob -e staging u:a d
 
-	X nbob          No command(s) specified
-
 [▴TOC](#table-of-contents)
 
 ## Config
 Configuration consists of nBob package defaults ([nbob-config.json](nbob-config.json)) which can be extended and overridden by user defaults (`~/.nbob/nbob-config.json`) and finally project configuration (`<project>/nbob-config.json`).
 
-These configuration files are JSON files with keys generally referring to the command processors that they configure.
+These configuration files are JSON files with section keys, aside from a few special ones ([nbob](#nbob-config), [project](project-config) and [envConfigMap](environment-config)), referring to the [command](#commands) that they define.
 
 The active configuration can be further influenced by specifying options ([--env](#environment-config) and [--option](#config-option)) on your command line.
 
@@ -126,9 +121,9 @@ Most configuration sections include a `files` key that specifies an array of glo
 For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
 
 ### Config extension
-When one config object is extended by another, any new properties are added and any existing properties are overridden.
+When one config object is extended by another then any new properties are added and any existing properties are overridden.
 
-Whe one config array is extended by another, all items from the other array are added to the first.
+When one config array is extended by another then all items from the other array are added to the first.
 However, when the extending array starts with the special item `!!` then the original array is first emptied, effectively replacing the array.
 
 ### Config substitution
@@ -222,10 +217,33 @@ If you want to quickly override a single configuration value you can use the `--
 
 [▴TOC](#table-of-contents)
 
-## Processors
-For now, please see processor source files for more information on how they work and [package.json](package.json) for links to third party dependencies.
+## Commands
+Commands combine a [processor](#processors) with configuration to provide a specific type of functionality.
+Their names are hierarchical, separated by colon characters `:`.
+When you execute a command you will also execute all of it's subcommands.
+If a Command specifies any dependencies, those commands will also be executed.
+Commands and subcommands are executed in the order that they were defined (though still processed parallelly where possible).
+When referenced from the command line, command names can be abbreviated.
 
-*TODO: Add support for showing processor help (e.g: nbob -h make:js:minify) and copy output here for convenience*
+**Example:**
+
+	"make:js:concat": {
+		"description": "Concatenate JS files",
+		"processor": "concat",
+		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
+		"output": "{{project.name}}-{{project.version}}.min.js"
+	},
+
+Uses the generic `concat` processor to concatenate JavaScript files and their source maps.
+
+**Note:** Through [config extension](#config-extension) not only command configs, but also their processor references can be customized. You can even add extra commands this way! Support for using your own custom processors will also be added in the near future.
+
+[▴TOC](#table-of-contents)
+
+## Processors
+*TODO: Add support for showing processor help (e.g: nbob -h make:js:minify) and copy output here*
+
+For now, please see processor source files for more information on how they work and [package.json](package.json) for links to used third party dependencies.
 
 ### Pending processors
 Here are some links to third party tools that might be used for pending processor implementations:
