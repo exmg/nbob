@@ -136,14 +136,16 @@ Configuration values can contain substitution syntax, inspired by Mustache templ
 **Example:**
 
 ```json
-"make:js:concat": {
-	"files": [ "{lib,src}/**/*.min.js{,.map}" ],
-	"output": "{{project.name}}-{{project.version}}.min.js"
-},
-"make:js:amd": {
-	"files": [ "{{make:js:concat.output}}{,.map}" ],
-	"exports": []
-},
+{
+	"make:js:concat": {
+		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
+		"output": "{{project.name}}-{{project.version}}.min.js"
+	},
+	"make:js:amd": {
+		"files": [ "{{make:js:concat.output}}{,.map}" ],
+		"exports": []
+	}
+}
 ```
 
 Results in project name and version being filled in to generate the JS concat output filename and the AMD using that output filename as input.
@@ -161,9 +163,11 @@ The special configuration section with key `nbob` has the following options:
 **Example:**
 
 ```json
-"nbob": {
-	"multiCore": false
-},
+{
+	"nbob": {
+		"multiCore": false
+	}
+}
 ```
 
 Adding this section to your user config file (`~/.nbob/nbob-config.json`) would result in all of your builds defaulting to not using multi-core processing. This can be useful if you have found that the overhead does not outweigh the improved processing speed on your system.
@@ -182,11 +186,13 @@ The special configuration section with key `project` has the following options:
 **Example:**
 
 ```json
-"project": {
-	"name": "awesomo",
-	"version": "1.2.3",
-	"files": [ "!!nbob-config.json", "!res/unused-theme/**/*" ]
-},
+{
+	"project": {
+		"name": "awesomo",
+		"version": "1.2.3",
+		"files": [ "!!nbob-config.json", "!res/unused-theme/**/*" ]
+	}
+}
 ```
 
 Results in nbob-config.json being un-excluded and the unused-theme files being excluded from all processing.
@@ -200,26 +206,28 @@ When you specify the name of such an environment using the `--env` option your c
 **Example:**
 
 ```json
-"make:substitute:path": {
-	"substitutes": {
-		"SERVER": "dev-backend.playtotv.com"
-	}
-},
-"deploy": {
-	"bucketName": "dev.playtotv.com"
-},
-"envConfigMap": {
-	"staging": {
-		"make:substitute:path": {
-			"substitutes": {
-				"SERVER": "staging-backend.playtotv.com"
+{
+	"make:substitute:path": {
+		"substitutes": {
+			"SERVER": "dev-backend.playtotv.com"
+		}
+	},
+	"deploy": {
+		"bucketName": "dev.playtotv.com"
+	},
+	"envConfigMap": {
+		"staging": {
+			"make:substitute:path": {
+				"substitutes": {
+					"SERVER": "staging-backend.playtotv.com"
+				}
+			},
+			"deploy": {
+				"bucketName": "staging.playtotv.com"
 			}
-		},
-		"deploy": {
-			"bucketName": "staging.playtotv.com"
 		}
 	}
-},
+}
 ```
 
 Will result with `$ nbob d` deploying to dev.playtotv.com and `$ nbob -e staging d` deploying to staging.playtotv.com.
@@ -248,12 +256,14 @@ When referenced from the command line, command names can be abbreviated.
 **Example:**
 
 ```json
-"make:js:concat": {
-	"description": "Concatenate JS files",
-	"processor": "concat",
-	"files": [ "{lib,src}/**/*.min.js{,.map}" ],
-	"output": "{{project.name}}-{{project.version}}.min.js"
-},
+{
+	"make:js:concat": {
+		"description": "Concatenate JS files",
+		"processor": "concat",
+		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
+		"output": "{{project.name}}-{{project.version}}.min.js"
+	}
+}
 ```
 
 Uses the generic `concat` processor to concatenate JavaScript files and their source maps.
