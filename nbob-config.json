@@ -24,7 +24,7 @@
 	},
 	"init:hint": {
 		"description": "Create .jshintrc and .jshintignore",
-		"processor": null
+		"processor": "init-hint"
 	},
 	"init:aws": {
 		"description": "Create ~/.aws/credentials",

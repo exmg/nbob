@@ -1,0 +1,33 @@
+{
+	"predef": {
+		"window": false,
+		"document": false,
+		"navigator": false,
+		"setTimeout": false,
+		"clearTimeout": false,
+		"XMLHttpRequest": false,
+		"when": false,
+		"playtotv": false
+	},
+	"bitwise": true,
+	"camelcase": true,
+	"curly": true,
+	"eqeqeq": true,
+	"forin": true,
+	"immed": true,
+	"latedef": true,
+	"maxcomplexity": 8,
+	"maxdepth": 3,
+	"maxlen": 120,
+	"maxparams": 5,
+	"maxstatements": 25,
+	"newcap": true,
+	"noarg": true,
+	"nonew": true,
+	"quotmark": "single",
+	"smarttabs": true,
+	"strict": true,
+	"trailing": true,
+	"undef": true,
+	"unused": true
+}
