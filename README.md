@@ -134,7 +134,6 @@ However, when the extending array starts with the special item `!!` then the ori
 Configuration values can contain substitution syntax, inspired by Mustache templating.
 
 **Example:**
-
 ```json
 {
 	"make:js:concat": {
@@ -161,7 +160,6 @@ The special configuration section with key `nbob` has the following options:
 * `multiCore = true` - Toggles multi-core processing on or off
 
 **Example:**
-
 ```json
 {
 	"nbob": {
@@ -184,7 +182,6 @@ The special configuration section with key `project` has the following options:
 * `distDir = "dist"` - Name of project subdirectory where to write distribution artifacts
 
 **Example:**
-
 ```json
 {
 	"project": {
@@ -204,7 +201,6 @@ The special configuration section with key `envConfigMap` can be used to specify
 When you specify the name of such an environment using the `--env` option your config will be extended with that environment config.
 
 **Example:**
-
 ```json
 {
 	"make:substitute:path": {
@@ -254,7 +250,6 @@ Commands and subcommands are executed in the order that they were defined (thoug
 When referenced from the command line, command names can be abbreviated.
 
 **Example:**
-
 ```json
 {
 	"make:js:concat": {
