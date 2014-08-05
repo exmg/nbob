@@ -62,7 +62,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	  init
 	    nbob        Create nbob-config.json
 	    hint        Create .jshintrc and .jshintignore
-	    aws         *Create ~/.aws/credentials
+	    aws         Create ~/.aws/credentials
 	  update
 	    api         Update EM api directory
 	    doc         *Update doc directory

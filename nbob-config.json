@@ -28,7 +28,7 @@
 	},
 	"init:aws": {
 		"description": "Create ~/.aws/credentials",
-		"processor": null
+		"processor": "init-aws"
 	},
 	"update:api": {
 		"description": "Update EM api directory",
