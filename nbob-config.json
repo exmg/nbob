@@ -3,8 +3,8 @@
 		"multiCore": true
 	},
 	"project": {
-		"name": "Unnamed",
-		"version": "0",
+		"name": null,
+		"version": null,
 		"files": [
 			"**/*",
 			"{{make:js:hint.rcFile}}",
@@ -20,7 +20,7 @@
 	},
 	"init:nbob": {
 		"description": "Create nbob-config.json",
-		"processor": null
+		"processor": "init-nbob"
 	},
 	"init:hint": {
 		"description": "Create .jshintrc and .jshintignore",
