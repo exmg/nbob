@@ -45,7 +45,7 @@
 		"description": "Update l10n directory",
 		"processor": "l10n-update",
 		"locales": "l10n/*.json",
-		"files": [ "{{update:l10n.locales}}", "**/*-l10n.html", "**/*-l10n/**/*.html" ]
+		"files": [ "{{update:l10n.locales}}", "**/*-l10n{,-*}.html", "**/*-l10n/**/*.html" ]
 	},
 	"update:lib": {
 		"description": "Update lib directory",
@@ -55,20 +55,23 @@
 		"description": "Remove build and dist directories",
 		"processor": "clean"
 	},
-	"make:include": {
-		"description": "Include files",
+	"make:images:png": {
+		"description": "Compress PNG images",
 		"processor": null
 	},
-	"make:l10n": {
-		"description": "Localize files",
+	"make:html:l10n": {
+		"description": "Localize texts",
 		"processor": "l10n-make",
 		"locales": "{{update:l10n.locales}}",
 		"files": "{{> update:l10n.files}}",
 		"default": null
 	},
-	"make:images:png": {
-		"description": "Compress PNG images",
-		"processor": null
+	"make:html:include": {
+		"description": "Include files",
+		"processor": "include",
+		"partials": "inc/**/*",
+		"files": [ "**/*-inc{,-*}.html", "{{make:html:include.partials}}" ],
+		"regex": "(?:\\<!--|/\\*) \\{\\{\\> (.*)}} (?:--\\>|\\*/)"
 	},
 	"make:html:minify": {
 		"description": "Minify HTML",

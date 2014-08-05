@@ -70,11 +70,11 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	    lib         *Update lib directory
 	  clean         Remove build and dist directories
 	  make
-	    include     *Include files
-	    l10n        Localize files
 	    images
 	      png       *Compress PNG images
 	    html
+	      l10n      Localize texts
+	      include   Include files
 	      minify    Minify HTML
 	      templates Concatenate templates
 	    css
