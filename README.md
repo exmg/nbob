@@ -47,7 +47,9 @@ On Windows:
 
 	> npm install -g nbob
 
-If an update is available then nBob will notify you and you can update with the same command line as above except with `install` replaced by `update`.
+If an update is available then nBob will notify you and you can update with a similar command line, p.e:
+
+	$ sudo npm update -g nbob
 
 [▴TOC](#table-of-contents)
 
