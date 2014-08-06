@@ -302,6 +302,7 @@ Here are some links to third party tools that might be used for pending processo
 ## Conventions
 nBob uses the following filename and directory conventions:
 
+* `inc/**/*` - HTML include files
 * `l10n/*.json` - Localization dictionary files
 * `lib/**/*.js` (and optionally `*.map`) - External JavaScript files from other projects etc. to be included into this project
 * `src/**/*.js` - This project's JavaScript files
