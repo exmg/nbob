@@ -47,7 +47,7 @@ On Windows:
 
 	> npm install -g nbob
 
-If an update is available then nBob will notify you and you can update with a similar command line, p.e:
+If an update is available then nBob will notify you and you can update similarly:
 
 	$ sudo npm update -g nbob
 
