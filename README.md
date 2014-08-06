@@ -74,7 +74,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	  clean         Remove build and dist directories
 	  make
 	    images
-	      png       *Compress PNG images
+	      png       Compress PNG images
 	    html
 	      l10n      Localize texts
 	      include   Include files
@@ -285,9 +285,6 @@ Here are some links to third party tools that might be used for pending processo
   * [yuidoc](http://yui.github.io/yuidoc)
   * [docco](http://jashkenas.github.io/docco)
   * [doxx](https://github.com/FGRibreau/doxx)
-* Image compression
-  * [node-tinypng](https://github.com/manuelvanrijn/node-tinypng)
-  * [node-pngquant-native](https://github.com/xiangshouding/node-pngquant-native)
 * ES6 transpiling
   * [traceur](https://github.com/google/traceur-compiler)
   * Or something smaller/simpler for basics features like: Class, Module, Promise

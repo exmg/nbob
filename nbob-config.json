@@ -63,7 +63,9 @@
 	},
 	"make:images:png": {
 		"description": "Compress PNG images",
-		"processor": null
+		"processor": "pngquant",
+		"files": [ "**/*.png" ],
+		"options": {}
 	},
 	"make:html:l10n": {
 		"description": "Localize texts",
