@@ -1,0 +1,6 @@
+syntax: glob
+.*
+*.sublime-workspace
+build
+dist
+doc

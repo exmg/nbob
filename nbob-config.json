@@ -22,9 +22,15 @@
 		"description": "Create nbob-config.json",
 		"processor": "init-nbob"
 	},
+	"init:hg": {
+		"description": "Create .hgignore",
+		"processor": "init-copy",
+		"relPaths": [ ".hgignore" ]
+	},
 	"init:hint": {
 		"description": "Create .jshintrc and .jshintignore",
-		"processor": "init-hint"
+		"processor": "init-copy",
+		"relPaths": [ ".jshintrc", ".jshintignore" ]
 	},
 	"init:aws": {
 		"description": "Create ~/.aws/credentials",
