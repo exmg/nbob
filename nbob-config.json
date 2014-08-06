@@ -101,7 +101,9 @@
 	},
 	"make:css:sass": {
 		"description": "Compile SASS to CSS",
-		"processor": null
+		"processor": "sass",
+		"files": [ "**/*.scss" ],
+		"partials": "**/_*.scss"
 	},
 	"make:js:hint": {
 		"description": "Analyze JS with JSHint",

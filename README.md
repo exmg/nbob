@@ -82,7 +82,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      templates Concatenate templates
 	    css
 	      less      Compile LESS to CSS
-	      sass      *Compile SASS to CSS
+	      sass      Compile SASS to CSS
 	    js
 	      hint      Analyze JS with JSHint
 	      es6       *Transpile ES6 to ES5
@@ -288,8 +288,6 @@ Here are some links to third party tools that might be used for pending processo
 * Image compression
   * [node-tinypng](https://github.com/manuelvanrijn/node-tinypng)
   * [node-pngquant-native](https://github.com/xiangshouding/node-pngquant-native)
-* CSS pre-processing
-  * [sass](https://github.com/andrew/node-sass)
 * ES6 transpiling
   * [traceur](https://github.com/google/traceur-compiler)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
