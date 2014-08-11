@@ -66,6 +66,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	    hg          Create .hgignore
 	    hint        Create .jshintrc and .jshintignore
 	    aws         Create ~/.aws/credentials
+	    xdr         Create EM xhr-proxy.html
 	  update
 	    api         Update EM api directory
 	    doc         *Update doc directory

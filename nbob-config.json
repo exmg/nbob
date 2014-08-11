@@ -36,6 +36,11 @@
 		"description": "Create ~/.aws/credentials",
 		"processor": "init-aws"
 	},
+	"init:xdr": {
+		"description": "Create EM xhr-proxy.html",
+		"processor": "init-copy",
+		"relPaths": [ "xhr-proxy.html" ]
+	},
 	"update:api": {
 		"description": "Update EM api directory",
 		"processor": "em-api",

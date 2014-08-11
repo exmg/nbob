@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- We prefer Chrome Frame or latest IE -->
+	<title>Cross Domain XHR Proxy</title>
+	<script type="text/javascript">
+	(function(t){"use strict";function e(e,a){a=a||"*",t.parent.postMessage(s?e:JSON.stringify(e),a)}function a(t,a){var n=o[a];n&&4===n.readyState&&(e({type:"readyStateChange",id:a,readyState:n.readyState,responseText:n.responseText,status:n.status},t),delete o[a])}function n(t,a,n,d,s){var r=d?n.upload:n;r.addEventListener(s,function(n){e({type:"event",upload:d,id:a,event:{type:n.type,lengthComputable:n.lengthComputable,loaded:n.loaded,total:n.total}},t),"timeout"===n.type&&delete o[a]},!1)}function d(t){s="object"==typeof t.data;var e,d,r,i,p=t.origin,l=s?t.data:JSON.parse(t.data),u=l.id,c=l.rpcs,y=c?c.length:0,v=o[u];for(v||(v=o[u]=new XMLHttpRequest,v.onreadystatechange=function(){try{a(p,u)}catch(t){}}),e=0;y>e;e++)d=c[e],r=d.method,i=d.args,"addEventListener"===r?n(p,u,v,i[0],i[1]):(v[r].apply(v,i),"abort"===r&&delete o[u])}var o=t.xhrs={},s=!1;t.addEventListener?t.addEventListener("message",d,!1):t.attachEvent&&t.attachEvent("onmessage",d),e({type:"initialized"})})(window);
+	</script>
+</head>
+<body>
+	<h1>Cross Domain XHR Proxy</h1>
+	<p>Copy this file to the root of each server you wish to make cross origin PlayToTV requests to.</p>
+</body>
+</html>
