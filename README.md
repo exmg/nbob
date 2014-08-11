@@ -123,6 +123,17 @@ The active configuration can be further influenced by specifying options ([--env
 Most configuration sections include a `files` key that specifies an array of glob patterns for files to be included and excluded (by starting glob string with an exclamation mark `!`).
 For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
 
+Most `files` configurations will be pre-configured to match the appropriate files by [convention](#conventions), but in some cases you will have to manually opt-in to using a command processor by adding files globs in your project configuration.
+
+**Example: Opt-in to use of make:images:png's lossy PNG compression**
+```json
+{
+	"make:images:png": {
+		"files": [ "**/*.png" ]
+	}
+}
+```
+
 [▴TOC](#table-of-contents)
 
 ### Config extension
