@@ -316,7 +316,7 @@ nBob uses the following filename and directory conventions:
 * `src/**/*.js` - This project's JavaScript files
 * `templates/**/*.html` - HTML template files to be compiled into directory JSON files
 * `.jshintrc` and `.jshintignore` - JSHint project configuration files
-* `**/*.{html,css,js,json,less}` - Respectively HTML/CSS/JS/JSON/LESS files (e.g: use extensions)
+* `**/*.{html,css,js,json,less,scss}` - Respectively HTML/CSS/JS/JSON/LESS/SASS files (e.g: use extensions)
 * `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
 * `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
 
