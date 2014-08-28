@@ -68,21 +68,10 @@
 		"files": "{{> update:l10n.files}}",
 		"default": null
 	},
-	"make:html:include": {
-		"description": "Include files",
-		"processor": "include",
-		"partials": "inc/**/*",
-		"files": [ "**/*-inc{,-*}.html", "{{make:html:include.partials}}" ],
-		"regex": "(?:\\<!--|/\\*) \\{\\{\\> (.*)}} (?:--\\>|\\*/)"
-	},
 	"make:html:minify": {
 		"description": "Minify HTML",
 		"processor": "html-minify",
-		"files": [ "**/*.html" ],
-		"options": {
-			"conditionals": true,
-			"quotes": true
-		}
+		"files": [ "**/*.html" ]
 	},
 	"make:html:templates": {
 		"description": "Concatenate templates",
@@ -115,7 +104,7 @@
 	"make:js:minify": {
 		"description": "Minify JS",
 		"processor": "uglify",
-		"files": [ "{lib,src}/**/*.js{,.map}", "!**/*.min.js" ],
+		"files": [ "**/*.js{,.map}", "!**/*.min.js" ],
 		"options": {
 			"compressor": {
 				"drop_debugger": false
@@ -137,6 +126,13 @@
 	"make:js:test": {
 		"description": "Run tests",
 		"processor": null
+	},
+	"make:include": {
+		"description": "Include files",
+		"processor": "include",
+		"partials": "inc/**/*",
+		"files": [ "**/*-inc{,-*}.html", "{{make:include.partials}}" ],
+		"regex": "(?:\\<!--|/\\*) \\{\\{\\> (.*?)}} (?:--\\>|\\*/)"
 	},
 	"make:substitute:path": {
 		"description": "Substitute in file paths",
