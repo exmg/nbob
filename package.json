@@ -35,6 +35,7 @@
     "connect": "~2.17.1",
     "es6-promise": "~0.1.1",
     "handlebars": "2.0.0-alpha.4",
+    "jscs": "~1.6.1",
     "jshint": "~2.5.0",
     "jsonlint": "~1.6.2",
     "less": "~1.7.0",

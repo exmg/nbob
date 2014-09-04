@@ -70,6 +70,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	    doc         *Update doc directory
 	    l10n        Update l10n directory
 	    lib         *Update lib directory
+	    endings     Convert text file line endings
 	  clean         Remove build and dist directories
 	  make
 	    images
@@ -84,6 +85,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      sass      Compile SASS to CSS
 	    js
 	      hint      Analyze JS with JSHint
+	      style     Check coding style conventions
 	      es6       *Transpile ES6 to ES5
 	      minify    Minify JS
 	      concat    Concatenate JS files

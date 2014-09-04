@@ -9,6 +9,7 @@
 			"**/*",
 			"{{make:js:hint.rcFile}}",
 			"{{make:js:hint.ignoreFile}}",
+			"{{make:js:style.rcFile}}",
 			"!build/**/*",
 			"!dist/**/*",
 			"!nbob-config.json",
@@ -50,6 +51,11 @@
 	"update:lib": {
 		"description": "Update lib directory",
 		"processor": null
+	},
+	"update:endings": {
+		"description": "Convert text file line endings",
+		"processor": "endings",
+		"files": [ "**/*.{html,css,js,json,less,scss}" ]
 	},
 	"clean": {
 		"description": "Remove build and dist directories",
@@ -96,6 +102,12 @@
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore",
 		"files": [ "{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js" ]
+	},
+	"make:js:style": {
+		"description": "Analyze JS with JSCS",
+		"processor": "jscs",
+		"rcFile": ".jscsrc",
+		"files": [ "{{make:js:style.rcFile}}", "**/*.js" ]
 	},
 	"make:js:es6": {
 		"description": "Transpile ES6 to ES5",
