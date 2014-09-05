@@ -18,58 +18,63 @@ playtotv.define('{{modulePackage}}.{{moduleName}}', [], function() {
 		/*jshint maxlen:300*/ // On occassion generated lines can be too long
 
 		/** @lends {{modulePackage}}.{{moduleName}} */
-{{#join methods separator=",\n"}}
+
+{{#join methods separator=",\n\n"}}
 		/**
 {{~#partial "enum-values"}}{{#if enumValues}} Valid values: {{#join enumValues}}'{{.}}'{{/join}}{{/if}}{{/partial}}
-{{~#partial "dto-params"}}
+{{#partial "dto-params"}}
 		 * <ul>
-{{~#.}}
-		 * <li><i>{ {{~type~}} }</i> <b>{{name}}</b>{{> enum-values}}{{#if pojo}}{{#with pojo.fieldsData}}{{> dto-params}}{{/with}}{{/if}}</li>
-{{~/.}}
+{{#.}}
+		 * <li><i>{ {{~type~}} }</i> <b>{{name}}</b>{{> enum-values}}{{#if pojo}}
+{{#with pojo.fieldsData}}{{> dto-params}}{{/with}}{{/if}}</li>
+{{/.}}
 		 * </ul>
 {{~/partial}}
-{{~#if requestDTOs.length}}
+{{#if requestDTOs.length}}
 		 * <b>Request DTO's:</b>
-{{~#with requestDTOs}}{{> dto-params}}{{/with}}
+{{#with requestDTOs}}{{> dto-params}}{{/with}}
 		 *
-{{~/if}}
-{{~#if responseVar.pojo}}
+{{/if}}
+{{#if responseVar.pojo}}
 		 * <b>Response data:</b>
-{{~#with responseVar.pojo.fieldsData}}{{> dto-params}}{{/with}}
+{{#with responseVar.pojo.fieldsData}}{{> dto-params}}{{/with}}
 		 *
-{{~/if}}
+{{/if}}
 		 * @function
-{{~#if params.length}}
+{{#if params.length}}
 		 * @param {Object} params
-{{~#params}}
+{{#params}}
 		 * @param { {{~type~}} } {{#if optional}}[{{/if}}params.{{name}}{{#if defaultValue}}={{defaultValue}}{{/if}}{{#if optional}}]{{/if}}{{> enum-values}}
-{{~/params}}
-{{~/if}}
+{{/params}}
+{{/if}}
 		 * @returns {Promise} Promise of response data ({{responseVar.type}})
 		 */
 		{{name}}: {
-{{~#replace regexp=",$"}}{{!-- Strip final comma and newline --}}
+{{#replace regexp=",\n$" by="\n"}}
 			label: '{{#replace regexp="API$"}}{{moduleName}}{{/replace}}.{{name}}',
 			url: '{{url}}',
-{{~#unless-equal type to="GET"}}
+{{#unless-equal type to="GET"}}
 			type: '{{type}}',
-{{~/unless-equal}}
-{{~#if queryVars.length}}
+{{/unless-equal}}
+{{#if queryVars.length}}
 			queryKeys: [
-{{~#join queryVars separator=","}}
+{{#join queryVars separator=",\n"}}
 				'{{name}}'
 {{~/join}}
+
 			],
-{{~/if}}
-{{~#if requestVars.length}}
+{{/if}}
+{{#if requestVars.length}}
 			dataKeys: [
-{{~#join requestVars separator=","}}
+{{#join requestVars separator=",\n"}}
 				'{{name}}'
 {{~/join}}
+
 			]
-{{~/if}}
-{{~/replace}}
+{{/if}}
+{{/replace}}
 		}
 {{~/join}}
+
 	};
 });
