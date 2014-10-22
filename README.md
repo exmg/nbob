@@ -292,6 +292,12 @@ For now, please see processor source files for more information on how they work
 ### Pending processors
 Here are some links to third party tools that might be used for pending processor implementations:
 
+* Image resizing
+  * [jimp](https://github.com/oliver-moran/jimp)
+* Image spriting
+  * [spritesmith](https://github.com/Ensighten/spritesmith)
+* Image optimizing
+  * [svgo](https://github.com/svg/svgo)
 * Documentation
   * [jsdoc3](https://github.com/jsdoc3/jsdoc)
   * [yuidoc](http://yui.github.io/yuidoc)
@@ -299,13 +305,19 @@ Here are some links to third party tools that might be used for pending processo
   * [doxx](https://github.com/FGRibreau/doxx)
 * ES6 transpiling
   * [traceur](https://github.com/google/traceur-compiler)
+  * [6to5](https://github.com/sebmck/6to5)
+  * [exnext](https://github.com/esnext/esnext)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
+* JS Linting
+  * [eslint](http://eslint.org) (possible alternative to jshint and jscs?)
 * JS Testing
   * [mocha](http://visionmedia.github.io/mocha)
+  * [intern](http://theintern.io)
 * Live Reload
   * [tiny-lr](https://github.com/mklabs/tiny-lr)
 * Browser Sync
   * [browser-sync](https://github.com/shakyshane/browser-sync)
+  * [ghostlab](http://vanamco.com/ghostlab)
 
 [▴TOC](#table-of-contents)
 
