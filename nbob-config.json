@@ -146,21 +146,17 @@
 		"files": [ "**/*-inc{,-*}.html", "{{make:include.partials}}" ],
 		"regex": "(?:\\<!--|/\\*) \\{\\{\\> (.*?)}} (?:--\\>|\\*/)"
 	},
-	"make:substitute:path": {
-		"description": "Substitute in file paths",
-		"processor": "substitute-path",
-		"files": [ "**/*__*__*{,/**/*}" ],
+	"make:substitute": {
+		"description": "Substitute in file paths and text",
+		"processor": "substitute",
+		"files": [ "**/*" ],
+		"textFiles": [ "**/*.{html,css,js,json}" ],
 		"substitutes": {
 			"PROJECT": "{{project.name}}",
 			"VERSION": "{{project.version}}",
 			"MIN_JS": "{{make:js:concat.output}}"
-		}
-	},
-	"make:substitute:text": {
-		"description": "Substitute in text files",
-		"processor": "substitute-text",
-		"files": [ "**/*.{html,css,js,json}" ],
-		"substitutes": "{{> make:substitute:path.substitutes}}"
+		},
+		"lists": {}
 	},
 	"make:dist": {
 		"description": "Write files to dist directory",
