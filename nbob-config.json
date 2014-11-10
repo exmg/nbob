@@ -155,8 +155,7 @@
 			"PROJECT": "{{project.name}}",
 			"VERSION": "{{project.version}}",
 			"MIN_JS": "{{make:js:concat.output}}"
-		},
-		"lists": {}
+		}
 	},
 	"make:dist": {
 		"description": "Write files to dist directory",
