@@ -82,7 +82,7 @@
 	"make:html:templates": {
 		"description": "Concatenate templates",
 		"processor": "directory",
-		"files": [ "templates/*/*.html" ],
+		"files": [ "{,__BUILD__/}templates/*/*.html" ],
 		"ext": ".html"
 	},
 	"make:css:less": {
@@ -152,6 +152,7 @@
 		"files": [ "**/*" ],
 		"textFiles": [ "**/*.{html,css,js,json}" ],
 		"substitutes": {
+			"BUILD": "__BUILD__",
 			"PROJECT": "{{project.name}}",
 			"VERSION": "{{project.version}}",
 			"MIN_JS": "{{make:js:concat.output}}"
