@@ -178,6 +178,10 @@
 		"bucketName": null,
 		"force": false,
 		"cacheControl": "max-age=3600",
+		"cacheControlRules": [ {
+			"files": [ "build-*/**/*" ],
+			"control": "max-age=31536000"
+		} ],
 		"gzipThreshold": 1000
 	},
 	"envConfigMap": {}
