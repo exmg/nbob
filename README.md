@@ -80,6 +80,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      include   Include files
 	      minify    Minify HTML
 	      templates Concatenate templates
+	      hbs       Compile Handlebars templates
 	    css
 	      less      Compile LESS to CSS
 	      sass      Compile SASS to CSS
@@ -309,6 +310,7 @@ Here are some links to third party tools that might be used for pending processo
   * Or something smaller/simpler for basics features like: Class, Module, Promise
 * JS Linting
   * [eslint](http://eslint.org) (possible alternative to jshint and jscs?)
+  * [flow](http://flowtype.org)
 * JS Testing
   * [mocha](http://visionmedia.github.io/mocha)
   * [intern](http://theintern.io)

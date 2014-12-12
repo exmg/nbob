@@ -46,7 +46,7 @@
 		"description": "Update l10n directory",
 		"processor": "l10n-update",
 		"locales": "l10n/*.json",
-		"files": [ "{{update:l10n.locales}}", "**/*-l10n{,-*}.html", "**/*-l10n/**/*.html" ]
+		"files": [ "{{update:l10n.locales}}", "**/*-l10n{,-*}.{html,hbs}", "**/*-l10n/**/*.{html,hbs}" ]
 	},
 	"update:lib": {
 		"description": "Update lib directory",
@@ -55,7 +55,7 @@
 	"update:endings": {
 		"description": "Convert text file line endings",
 		"processor": "endings",
-		"files": [ "**/*.{html,css,js,json,less,scss}" ]
+		"files": [ "**/*.{html,hbs,css,js,json,less,scss}" ]
 	},
 	"clean": {
 		"description": "Remove build and dist directories",
@@ -77,13 +77,23 @@
 	"make:html:minify": {
 		"description": "Minify HTML",
 		"processor": "html-minify",
-		"files": [ "**/*.html" ]
+		"files": [ "**/*.{html,hbs}" ]
 	},
 	"make:html:templates": {
 		"description": "Concatenate templates",
 		"processor": "directory",
 		"files": [ "{,__BUILD__/}templates/*/*.html" ],
 		"ext": ".html"
+	},
+	"make:html:hbs": {
+		"description": "Compile Handlebars templates",
+		"processor": "handlebars",
+		"dir": "templates",
+		"ext": ".hbs",
+		"files": [ "{{make:html:hbs.dir}}/**/*{{make:html:hbs.ext}}" ],
+		"partialFiles": [ "{{make:html:hbs.dir}}/*/**/*" ],
+		"output": "lib/handlebars.js",
+		"runtime": true
 	},
 	"make:css:less": {
 		"description": "Compile LESS to CSS",
@@ -150,7 +160,7 @@
 		"description": "Substitute in file paths and text",
 		"processor": "substitute",
 		"files": [ "**/*" ],
-		"textFiles": [ "**/*.{html,css,js,json}" ],
+		"textFiles": [ "**/*.{html,hbs,css,js,json}" ],
 		"substitutes": {
 			"BUILD": "__BUILD__",
 			"PROJECT": "{{project.name}}",
