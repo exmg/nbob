@@ -1,7 +1,7 @@
 {
   "name": "nbob",
   "description": "Ex Machina's frontend build tool",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "keywords": [
     "assembler",
     "builder",
