@@ -64,7 +64,7 @@
 	"make:images:png": {
 		"description": "Compress PNG images",
 		"processor": "pngquant",
-		"files": [],
+		"files": [ "**/*.png" ],
 		"options": {}
 	},
 	"make:html:l10n": {
