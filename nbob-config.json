@@ -88,10 +88,9 @@
 	"make:html:hbs": {
 		"description": "Compile Handlebars templates",
 		"processor": "handlebars",
-		"dir": "templates",
-		"ext": ".hbs",
-		"files": [ "{{make:html:hbs.dir}}/**/*{{make:html:hbs.ext}}" ],
-		"partialFiles": [ "{{make:html:hbs.dir}}/*/**/*" ],
+		"files": [ "templates/**/*.hbs" ],
+		"partialFiles": [ "**/_*", "!**/__*" ],
+		"nameRegex": "^templates/(.+)\\.hbs$",
 		"output": "lib/handlebars.js",
 		"runtime": true
 	},
