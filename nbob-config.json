@@ -126,11 +126,9 @@
 		"description": "Minify JS",
 		"processor": "uglify",
 		"files": [ "**/*.js{,.map}", "!**/*.min.js" ],
-		"options": {
-			"compressor": {
-				"drop_debugger": false
-			}
-		}
+		"mangle": true,
+		"compressor": {},
+		"printer": {}
 	},
 	"make:js:concat": {
 		"description": "Concatenate JS files",
@@ -193,5 +191,14 @@
 		} ],
 		"gzipThreshold": 1000
 	},
-	"envConfigMap": {}
+	"envConfigMap": {
+		"debug": {
+			"make:js:minify": {
+				"mangle": false,
+				"compressor": {
+					"drop_debugger": false
+				}
+			}
+		}
+	}
 }
