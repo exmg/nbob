@@ -303,6 +303,9 @@ Here are some links to third party tools that might be used for pending processo
   * [yuidoc](http://yui.github.io/yuidoc)
   * [docco](http://jashkenas.github.io/docco)
   * [doxx](https://github.com/FGRibreau/doxx)
+* ES6 Module loading and packaging
+  * [systemjs](https://github.com/systemjs/builder#sfx-bundles)
+  * [jspm](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-self-executing-bundle)
 * ES6 transpiling
   * [traceur](https://github.com/google/traceur-compiler)
   * [6to5](https://github.com/sebmck/6to5)
