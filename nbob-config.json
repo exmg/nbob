@@ -159,6 +159,7 @@
 		"files": [ "**/*" ],
 		"textFiles": [ "**/*.{html,hbs,css,js,json}" ],
 		"substitutes": {
+			"ENV": "__ENV__",
 			"BUILD": "__BUILD__",
 			"PROJECT": "{{project.name}}",
 			"VERSION": "{{project.version}}",
