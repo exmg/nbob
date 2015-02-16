@@ -83,7 +83,6 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      hbs       Compile Handlebars templates
 	    css
 	      less      Compile LESS to CSS
-	      sass      Compile SASS to CSS
 	    js
 	      hint      Analyze JS with JSHint
 	      style     Analyze JS with JSCS
@@ -337,7 +336,7 @@ nBob uses the following filename and directory conventions:
 * `lib/**/*.js` (and optionally `*.map`) - External JavaScript files from other projects etc. to be included into this project
 * `src/**/*.js` - This project's JavaScript files
 * `templates/**/*.html` - HTML template files to be compiled into directory JSON files
-* `**/*.{html,css,js,json,less,scss}` - Respectively HTML/CSS/JS/JSON/LESS/SASS files (e.g: use extensions)
+* `**/*.{html,css,js,json,less}` - Respectively HTML/CSS/JS/JSON/LESS files (e.g: use extensions)
 * `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
 * `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
 * `__BUILD__/**/*` - Files to be prefixed with build digest (e.g, becomes: `build-1a2B3c4D/**/*`) and cached longer

@@ -99,12 +99,6 @@
 		"processor": "less",
 		"files": [ "**/*.less" ]
 	},
-	"make:css:sass": {
-		"description": "Compile SASS to CSS",
-		"processor": "sass",
-		"files": [ "**/*.scss" ],
-		"partials": "**/_*.scss"
-	},
 	"make:js:hint": {
 		"description": "Analyze JS with JSHint",
 		"processor": "jshint",
