@@ -4,6 +4,7 @@
 	"validateIndentation": "\t",
 	"validateQuoteMarks": { "mark": "'", "escape": true },
 	"requireMultipleVarDecl": null,
+	"requireSpacesInsideParentheses": null,
 	"excludeFiles": [
 		"**/*.min.js"
 	]
