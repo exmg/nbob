@@ -306,6 +306,8 @@ Here are some links to third party tools that might be used for pending processo
   * [recess](https://github.com/twitter/recess)
 * CSS prefixing
   * [autoprefixer](https://github.com/postcss/autoprefixer)
+* CSS minification
+  * [clean-css](https://github.com/jakubpawlowicz/clean-css)
 * ES6 Module loading and packaging
   * [systemjs](https://github.com/systemjs/builder#sfx-bundles)
   * [jspm](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-self-executing-bundle)
