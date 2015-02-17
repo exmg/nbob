@@ -316,6 +316,9 @@ Here are some links to third party tools that might be used for pending processo
   * [babel](https://github.com/babel/babel)
   * [esnext](https://github.com/esnext/esnext)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
+* JS Formatting/Fixing
+  * [fixmyjs](https://github.com/jshint/fixmyjs)
+  * [jsfmt](https://github.com/rdio/jsfmt)
 * JS Linting
   * [eslint](http://eslint.org) (possible alternative to jshint and jscs?)
   * [flow](http://flowtype.org)
