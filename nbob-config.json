@@ -188,6 +188,9 @@
 	},
 	"envConfigMap": {
 		"debug": {
+			"make:html:minify": {
+				"files": [ "!!" ]
+			},
 			"make:js:minify": {
 				"mangle": false,
 				"compressor": {
