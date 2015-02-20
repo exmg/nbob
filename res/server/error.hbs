@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>{{error.name}}: {{commandName}}</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style>
+			body {
+				margin: 0;
+				padding: 10%;
+				font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+				background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+				background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+				background-repeat: no-repeat;
+				color: #333;
+				-webkit-font-smoothing: antialiased;
+			}
+			a {
+				color: #533;
+			}
+			.excerpt {}
+			code {
+				padding: 5px;
+				display: block;
+				white-space: pre;
+				overflow: auto;
+				background: #333;
+				color: #aaa;
+				font-size: 0.8em;
+			}
+			ul.details {
+				-webkit-padding-start: 20px;
+			}
+			footer {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: #fff;
+				color: #555;
+				font-weight: bold
+			}
+			footer span {
+				margin: 5px;
+			}
+			footer .project {
+				float: left;
+			}
+			footer .nbob {
+				float: right;
+			}
+			.icon {
+				max-height: 2em;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>{{error.name}}: {{commandName}}</h1>
+		<h2>{{command.description}}</h2>
+		<h3>{{error.title.text}}</h3>
+
+		{{#error.title.excerpts}}
+		<div class="excerpt">
+			At {{path}}:{{line}}:{{column}}:
+			<code>{{context}}</code>
+		</div>
+		{{/error.title.excerpts}}
+
+		<ul class="details">
+		{{#each error.details}}
+			<li>
+				{{text}}
+				{{#excerpts}}
+				<div class="excerpt">
+					At {{path}}:{{line}}:{{column}}:
+					<code>{{context}}</code>
+				</div>
+				{{/excerpts}}
+			</li>
+		{{/each}}
+		</ul>
+
+		<a id="toggle-stack"><h4>Stack trace</h4></a>
+		<ul id="stack" style="display: none;">
+			{{#each error.stack}}
+			<li>{{.}}</li>
+			{{/each}}
+		</ul>
+
+		<footer>
+			<a id="reload">
+				<span class="project">
+					<!-- TODO: Use project favicon -->
+					<img class="icon" src="//raw.githubusercontent.com/exmg/nbob/master/bob.jpg">
+					{{project.name}} v{{project.version}}
+				</span>
+			</a>
+			<a href="https://github.com/exmg/nbob">
+				<span class="nbob">
+					{{pkg.name}} v{{pkg.version}}
+					<!-- TODO: Get icon from local file system so this works offline as well -->
+					<img class="icon" src="//raw.githubusercontent.com/exmg/nbob/master/bob.jpg">
+				</span>
+			</a>
+		</footer>
+
+		<script>
+			/*jshint ignore:start*//*jscs:disable*/
+
+			// Handle stack trace expand/collapse toggle
+			var toggleNode = document.getElementById('toggle-stack');
+			var stackNode = document.getElementById('stack');
+			var stackStyle = stackNode.style;
+			toggleNode.addEventListener('click', function() {
+				stackStyle.display = stackStyle.display === 'block' ? 'none' : 'block';
+			});
+
+			// Handle reload link
+			var reloadNode = document.getElementById('reload');
+			reloadNode.addEventListener('click', function(e) {
+				e.preventDefault();
+				location.reload(true);
+			});
+		</script>
+	</body>
+</html>
