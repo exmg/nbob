@@ -20,6 +20,8 @@
 			}
 			a {
 				color: #533;
+				text-decoration: none;
+				cursor: pointer;
 			}
 			ul.details {
 				-webkit-padding-start: 20px;
@@ -53,7 +55,19 @@
 	</head>
 	<body>
 		<h1>{{error.name}}: {{commandName}}</h1>
-		<h2>{{command.description}}</h2>
+		<h2>
+			{{command.description}}
+
+			{{#if processor.documentation}}
+				<a href="{{processor.documentation}}" title="Open processor documentation page">
+			{{/if}}
+
+			({{processor.name}})
+
+			{{#if processor.documentation}}
+				</a>
+			{{/if}}
+		</h2>
 		<h3>{{error.title.text}}</h3>
 
 		{{#error.title.excerpts}}
@@ -77,7 +91,9 @@
 		{{/each}}
 		</ul>
 
-		<a id="toggle-stack"><h4>Stack trace</h4></a>
+		<h4>
+			<a id="toggle-stack" title="Expand/collapse stack trace">Stack trace</a>
+		</h4>
 		<ul id="stack" style="display: none;">
 			{{#each error.stack}}
 			<li>{{.}}</li>
@@ -85,20 +101,20 @@
 		</ul>
 
 		<footer>
-			<a id="reload">
-				<span class="project">
+			<span class="project">
+				<a id="reload" title="Reload (try again)">
 					<!-- TODO: Use project favicon -->
 					<img class="icon" src="//raw.githubusercontent.com/exmg/nbob/master/bob.jpg">
 					{{project.name}} v{{project.version}}
-				</span>
-			</a>
-			<a href="https://github.com/exmg/nbob">
-				<span class="nbob">
+				</a>
+			</span>
+			<span class="nbob">
+				<a href="https://github.com/exmg/nbob" title="Open nBob homepage">
 					{{pkg.name}} v{{pkg.version}}
 					<!-- TODO: Get icon from local file system so this works offline as well -->
 					<img class="icon" src="//raw.githubusercontent.com/exmg/nbob/master/bob.jpg">
-				</span>
-			</a>
+				</a>
+			</span>
 		</footer>
 
 		<script>
