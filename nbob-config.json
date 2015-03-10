@@ -120,6 +120,7 @@
 		"description": "Minify JS",
 		"processor": "uglify",
 		"files": [ "**/*.js{,.map}", "!**/*.min.js" ],
+		"ignoreFiles": [ "{{make:html:hbs.output}}" ],
 		"mangle": true,
 		"compressor": {},
 		"printer": {}
