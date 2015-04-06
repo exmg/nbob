@@ -5,6 +5,7 @@
 	"validateQuoteMarks": { "mark": "'", "escape": true },
 	"requireMultipleVarDecl": null,
 	"requireSpacesInsideParentheses": null,
+	"requirePaddingNewLinesBeforeLineComments": null,
 	"excludeFiles": [
 		"**/*.min.js"
 	]
