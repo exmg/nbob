@@ -91,8 +91,7 @@
 		"files": [ "templates/**/*.hbs" ],
 		"partialFiles": [ "**/_*", "!**/__*" ],
 		"nameRegex": "^templates/(.+)\\.hbs$",
-		"output": "lib/handlebars.js",
-		"runtime": true
+		"runtime": "lib/handlebars.js"
 	},
 	"make:css:less": {
 		"description": "Compile LESS to CSS",
@@ -104,13 +103,16 @@
 		"processor": "jshint",
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore",
-		"files": [ "{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js" ]
+		"files": [
+			"{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js",
+			"!{{make:html:hbs.runtime}}", "!**/*.hbs.js"
+		]
 	},
 	"make:js:style": {
 		"description": "Analyze JS with JSCS",
 		"processor": "jscs",
 		"rcFile": ".jscsrc",
-		"files": [ "{{make:js:style.rcFile}}", "**/*.js" ]
+		"files": [ "{{make:js:style.rcFile}}", "**/*.js", "!{{make:html:hbs.runtime}}", "!**/*.hbs.js" ]
 	},
 	"make:js:es6": {
 		"description": "Transpile ES6 to ES5",
@@ -128,7 +130,7 @@
 	"make:js:concat": {
 		"description": "Concatenate JS files",
 		"processor": "concat",
-		"files": [ "{lib,src}/**/*.min.js{,.map}" ],
+		"files": [ "{lib,templates,src}/**/*.min.js{,.map}" ],
 		"output": "{{project.name}}-{{project.version}}.min.js"
 	},
 	"make:js:amd": {
