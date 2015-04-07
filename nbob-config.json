@@ -77,7 +77,7 @@
 	"make:html:minify": {
 		"description": "Minify HTML",
 		"processor": "html-minify",
-		"files": [ "**/*.{html,hbs}" ]
+		"files": [ "**/*.html" ]
 	},
 	"make:html:templates": {
 		"description": "Concatenate templates",
@@ -91,7 +91,12 @@
 		"files": [ "templates/**/*.hbs" ],
 		"partialFiles": [ "**/_*", "!**/__*" ],
 		"nameRegex": "^templates/(.+)\\.hbs$",
-		"runtime": "lib/handlebars.js"
+		"runtime": "lib/handlebars.js",
+		"options": {
+			"knownHelpers": [ "if", "unless", "each", "with", "lookup", "log" ],
+			"knownHelpersOnly": false,
+			"data": false
+		}
 	},
 	"make:css:less": {
 		"description": "Compile LESS to CSS",
