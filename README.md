@@ -317,6 +317,7 @@ Here are some links to third party tools that might be used for pending processo
   * [esnext](https://github.com/esnext/esnext)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
 * JS Formatting/Fixing
+  * [jscs](https://github.com/jscs-dev/node-jscs/releases/tag/v1.12.0)
   * [fixmyjs](https://github.com/jshint/fixmyjs)
   * [jsfmt](https://github.com/rdio/jsfmt)
 * JS Linting
