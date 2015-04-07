@@ -135,7 +135,7 @@
 	"make:js:concat": {
 		"description": "Concatenate JS files",
 		"processor": "concat",
-		"files": [ "{lib,templates,src}/**/*.min.js{,.map}" ],
+		"files": [ "{lib,templates,src}/**/*.js{,.map}" ],
 		"output": "{{project.name}}-{{project.version}}.min.js"
 	},
 	"make:js:amd": {
