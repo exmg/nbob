@@ -103,6 +103,13 @@
 		"processor": "less",
 		"files": [ "**/*.less" ]
 	},
+	"make:js:style": {
+		"description": "Analyze and Fix JS with JSCS",
+		"processor": "jscs",
+		"rcFile": ".jscsrc",
+		"files": [ "{{make:js:style.rcFile}}", "**/*.js", "!{{make:html:hbs.runtime}}", "!**/*.hbs.js" ],
+		"fix": true
+	},
 	"make:js:hint": {
 		"description": "Analyze JS with JSHint",
 		"processor": "jshint",
@@ -112,12 +119,6 @@
 			"{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js",
 			"!{{make:html:hbs.runtime}}", "!**/*.hbs.js"
 		]
-	},
-	"make:js:style": {
-		"description": "Analyze JS with JSCS",
-		"processor": "jscs",
-		"rcFile": ".jscsrc",
-		"files": [ "{{make:js:style.rcFile}}", "**/*.js", "!{{make:html:hbs.runtime}}", "!**/*.hbs.js" ]
 	},
 	"make:js:es6": {
 		"description": "Transpile ES6 to ES5",
