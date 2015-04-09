@@ -95,7 +95,7 @@
 		"options": {
 			"knownHelpers": [ "if", "unless", "each", "with", "lookup", "log" ],
 			"knownHelpersOnly": false,
-			"data": false
+			"data": true
 		}
 	},
 	"make:css:less": {
