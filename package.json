@@ -14,7 +14,7 @@
   "dependencies": {
     "abbrev": "~1.0.5",
     "aws-sdk": "~2.1.22",
-    "chokidar": "~0.6.3",
+    "chokidar": "~1.0.0",
     "compression": "~1.4.1",
     "connect": "~3.3.4",
     "es6-promise": "~2.0.1",
