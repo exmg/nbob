@@ -27,6 +27,12 @@
 		"description": "Copy skeleton files",
 		"processor": "init-skeleton"
 	},
+	"init:browsers": {
+		"description": "Create browserslist file",
+		"processor": "init-browsers",
+		"file": "browserslist",
+		"files": [ "{{init:browsers.file}}" ]
+	},
 	"init:aws": {
 		"description": "Create ~/.aws/credentials",
 		"processor": "init-aws"
@@ -106,7 +112,7 @@
 	"make:css:post": {
 		"description": "Post process CSS",
 		"processor": "postcss",
-		"files": [ "**/*.css{,.map}" ],
+		"files": [ "{{init:browsers.file}}", "**/*.css{,.map}" ],
 		"plugins": {
 			"autoprefixer": {
 				"remove": false
