@@ -103,6 +103,19 @@
 		"processor": "less",
 		"files": [ "**/*.less" ]
 	},
+	"make:css:post": {
+		"description": "Post process CSS",
+		"processor": "postcss",
+		"files": [ "**/*.css{,.map}" ],
+		"plugins": {
+			"autoprefixer": {
+				"remove": false
+			},
+			"csswring": {
+				"preserveHacks": true
+			}
+		}
+	},
 	"make:js:style": {
 		"description": "Analyze and Fix JS with JSCS",
 		"processor": "jscs",

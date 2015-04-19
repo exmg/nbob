@@ -77,15 +77,15 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      png       Compress PNG images
 	    html
 	      l10n      Localize texts
-	      include   Include files
 	      minify    Minify HTML
 	      templates Concatenate templates
 	      hbs       Compile Handlebars templates
 	    css
 	      less      Compile LESS to CSS
+	      post      Post process CSS
 	    js
+	      style     Analyze and Fix JS with JSCS
 	      hint      Analyze JS with JSHint
-	      style     Analyze JS with JSCS
 	      es6       *Transpile ES6 to ES5
 	      minify    Minify JS
 	      concat    Concatenate JS files
@@ -123,16 +123,7 @@ The active configuration can be further influenced by specifying options ([--env
 Most configuration sections include a `files` key that specifies an array of glob patterns for files to be included and excluded (by starting glob string with an exclamation mark `!`).
 For glob syntax details, please see the documentation of the used matcher: [minimatch](https://github.com/isaacs/minimatch).
 
-Most `files` configurations will be pre-configured to match the appropriate files by [convention](#conventions), but in some cases you will have to manually opt-in to using a command processor by adding files globs in your project configuration.
-
-**Example: Opt-in to use of make:images:png's lossy PNG compression**
-```json
-{
-	"make:images:png": {
-		"files": [ "**/*.png" ]
-	}
-}
-```
+Most, if not all, `files` configurations will be pre-configured to match the appropriate files by [convention](#conventions), but in some cases you will have to manually opt-in to using a command processor by adding files globs in your project configuration.
 
 [▴TOC](#table-of-contents)
 
@@ -304,10 +295,6 @@ Here are some links to third party tools that might be used for pending processo
   * [doxx](https://github.com/FGRibreau/doxx)
 * CSS linting
   * [recess](https://github.com/twitter/recess)
-* CSS prefixing
-  * [autoprefixer](https://github.com/postcss/autoprefixer)
-* CSS minification
-  * [clean-css](https://github.com/jakubpawlowicz/clean-css)
 * ES6 Module loading and packaging
   * [systemjs](https://github.com/systemjs/builder#sfx-bundles)
   * [jspm](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-self-executing-bundle)
@@ -317,7 +304,6 @@ Here are some links to third party tools that might be used for pending processo
   * [esnext](https://github.com/esnext/esnext)
   * Or something smaller/simpler for basics features like: Class, Module, Promise
 * JS Formatting/Fixing
-  * [jscs](https://github.com/jscs-dev/node-jscs/releases/tag/v1.12.0)
   * [fixmyjs](https://github.com/jshint/fixmyjs)
   * [jsfmt](https://github.com/rdio/jsfmt)
 * JS Linting
@@ -342,9 +328,11 @@ nBob uses the following filename and directory conventions:
 * `lib/**/*.js` (and optionally `*.map`) - External JavaScript files from other projects etc. to be included into this project
 * `src/**/*.js` - This project's JavaScript files
 * `templates/**/*.html` - HTML template files to be compiled into directory JSON files
-* `**/*.{html,css,js,json,less}` - Respectively HTML/CSS/JS/JSON/LESS files (e.g: use extensions)
-* `**/*.min.*` and `**/*.min.*.map` - Minified files and corresponding source map files
-* `**/*-l10n.html` and `**/*-l10n/**/*.html` - Files to be localized
+* `templates/**/*.hbs` - Handlebars template files to be compiled to JS files and later
+* `**/*.{html,css,js,json,less,png}` - Respectively HTML/CSS/JS/JSON/LESS/PNG files (e.g: use extensions)
+* `**/*.min.*` - Minified files (e.g: `foo.min.js` from `foo.js`)
+* `**/*.map` - Source map files (e.g: `foo.min.js.map` for `foo.min.js`)
+* `**/*-l10n{,-*}.{html,hbs}` and `**/*-l10n/**/*.{html,hbs}` - Files to be localized
 * `__BUILD__/**/*` - Files to be prefixed with build digest (e.g, becomes: `build-1a2B3c4D/**/*`) and cached longer
 
 ## Init
