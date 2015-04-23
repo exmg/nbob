@@ -10,6 +10,7 @@
 			"{{make:js:hint.rcFile}}",
 			"{{make:js:hint.ignoreFile}}",
 			"{{make:js:style.rcFile}}",
+			"{{make:js:esnext.rcFile}}",
 			"!build/**/*",
 			"!dist/**/*",
 			"!nbob-config.json",
@@ -139,9 +140,11 @@
 			"!{{make:html:hbs.runtime}}", "!**/*.hbs.js"
 		]
 	},
-	"make:js:es6": {
-		"description": "Transpile ES6 to ES5",
-		"processor": null
+	"make:js:esnext": {
+		"description": "Transpile ES6+ to ES5 with Babel",
+		"processor": "babel",
+		"rcFile": ".babelrc",
+		"files": [ "{{make:js:esnext.rcFile}}", "**/*.js{,.map}" ]
 	},
 	"make:js:minify": {
 		"description": "Minify JS",

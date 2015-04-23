@@ -87,7 +87,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	    js
 	      style     Analyze and Fix JS with JSCS
 	      hint      Analyze JS with JSHint
-	      es6       *Transpile ES6 to ES5
+	      esnext    Transpile ES6+ to ES5 with Babel
 	      minify    Minify JS
 	      concat    Concatenate JS files
 	      amd       Optimize EM AMD modules
@@ -299,11 +299,6 @@ Here are some links to third party tools that might be used for pending processo
 * ES6 Module loading and packaging
   * [systemjs](https://github.com/systemjs/builder#sfx-bundles)
   * [jspm](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-self-executing-bundle)
-* ES6 transpiling
-  * [traceur](https://github.com/google/traceur-compiler)
-  * [babel](https://github.com/babel/babel)
-  * [esnext](https://github.com/esnext/esnext)
-  * Or something smaller/simpler for basics features like: Class, Module, Promise
 * JS Formatting/Fixing
   * [fixmyjs](https://github.com/jshint/fixmyjs)
   * [jsfmt](https://github.com/rdio/jsfmt)

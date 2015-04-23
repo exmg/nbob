@@ -6,6 +6,7 @@
 	"requireMultipleVarDecl": null,
 	"requireSpacesInsideParentheses": null,
 	"requirePaddingNewLinesBeforeLineComments": null,
+	"esnext": true,
 	"excludeFiles": [
 		"**/*.min.js"
 	]
