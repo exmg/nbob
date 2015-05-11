@@ -6,7 +6,7 @@
 		"setTimeout": false,
 		"clearTimeout": false,
 		"XMLHttpRequest": false,
-		"when": false,
+		"Promise": false,
 		"playtotv": false
 	},
 	"bitwise": true,
