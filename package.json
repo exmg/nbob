@@ -1,7 +1,7 @@
 {
   "name": "nbob",
   "description": "Ex Machina's frontend build tool",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "homepage": "https://github.com/exmg/nbob/",
   "author": "Ex Machina",
   "license": "MIT",
