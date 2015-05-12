@@ -168,7 +168,8 @@
 		"description": "Optimize EM AMD modules",
 		"processor": "em-amd",
 		"files": [ "{{make:js:concat.output}}{,.map}" ],
-		"exports": []
+		"exports": [],
+		"ignoreUndefDeps": false
 	},
 	"make:js:test": {
 		"description": "Run tests",
