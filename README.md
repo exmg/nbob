@@ -164,12 +164,16 @@ It is however a deprecated feature since it does not combine well with config ex
 The special configuration section with key `nbob` has the following options:
 
 * `multiCore = true` - Toggles multi-core processing on or off
+* `host = 'localhost'` -
+* `openbrowser = false` - If set to true will open browser window when starting `$ nbob server`
 
 **Example:**
 ```json
 {
 	"nbob": {
-		"multiCore": false
+		"multiCore": false,
+		"host": "localhost",
+		"openbrowser": true
 	}
 }
 ```
