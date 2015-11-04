@@ -34,6 +34,7 @@
     "morgan": "~1.6.0",
     "node-pngquant-native": "^1.0.1",
     "npmlog": "~1.2.1",
+    "opener": "^1.4.1",
     "pako": "^0.2.8",
     "postcss": "~4.1.13",
     "rimraf": "~2.4.1",
