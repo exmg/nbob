@@ -110,6 +110,11 @@
 		"processor": "less",
 		"files": [ "**/*.less" ]
 	},
+	"make:css:sass": {
+		"description": "Compile SASS to CSS",
+		"processor": "sass",
+		"files": [ "**/*.scss" ]
+	},
 	"make:css:post": {
 		"description": "Post process CSS",
 		"processor": "postcss",
