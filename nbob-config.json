@@ -1,6 +1,8 @@
 {
 	"nbob": {
-		"multiCore": true
+		"multiCore": true,
+		"openbrowser": false,
+		"host": "localhost"
 	},
 	"project": {
 		"name": null,
