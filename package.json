@@ -22,7 +22,7 @@
     "csswring": "~3.0.5",
     "es6-promise": "~2.3.0",
     "handlebars": "~3.0.3",
-    "jscs": "~1.13.1",
+    "jscs": "~2.5.0",
     "jshint": "~2.8.0",
     "jsonlint": "~1.6.2",
     "less": "^2.5.3",
