@@ -298,6 +298,8 @@ Here are some links to third party tools that might be used for pending processo
   * [yuidoc](http://yui.github.io/yuidoc)
   * [docco](http://jashkenas.github.io/docco)
   * [doxx](https://github.com/FGRibreau/doxx)
+  * [esdoc](https://esdoc.org)
+  * [documentation](https://github.com/documentationjs/documentation)
 * CSS linting
   * [recess](https://github.com/twitter/recess)
 * ES6 Module loading and packaging
