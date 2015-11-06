@@ -113,7 +113,7 @@
 		"files": [ "**/*.less" ]
 	},
 	"make:css:sass": {
-		"description": "Compile SASS to CSS",
+		"description": "Compile Sass to CSS",
 		"processor": "sass",
 		"files": [ "**/*.scss" ]
 	},
