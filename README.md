@@ -78,16 +78,18 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      png       Compress PNG images
 	    html
 	      l10n      Localize texts
+	      hbs       Render Handlebars to HTML
 	      minify    Minify HTML
 	      templates Concatenate templates
-	      hbs       Compile Handlebars templates
 	    css
 	      less      Compile LESS to CSS
+	      sass      Compile Sass to CSS
 	      post      Post process CSS
 	    js
 	      style     Analyze and Fix JS with JSCS
 	      hint      Analyze JS with JSHint
 	      esnext    Transpile ES6+ to ES5 with Babel
+	      hbs       Compile Handlebars templates
 	      minify    Minify JS
 	      concat    Concatenate JS files
 	      amd       Optimize EM AMD modules
