@@ -83,6 +83,15 @@
 		"files": "{{> update:l10n.files}}",
 		"default": null
 	},
+	"make:html:hbs": {
+		"description": "Render Handlebars to HTML",
+		"processor": "hbs-html",
+		"files": [ "**/*.hbs", "!templates/**/*" ],
+		"partialFiles": [ "**/_*" ],
+		"nameRegex": "^(.+)\\.hbs$",
+		"options": {},
+		"helpers": null
+	},
 	"make:html:minify": {
 		"description": "Minify HTML",
 		"processor": "html-minify",
@@ -93,19 +102,6 @@
 		"processor": "directory",
 		"files": [ "{,__BUILD__/}templates/*/*.html" ],
 		"ext": ".html"
-	},
-	"make:html:hbs": {
-		"description": "Compile Handlebars templates",
-		"processor": "handlebars",
-		"files": [ "templates/**/*.hbs" ],
-		"partialFiles": [ "**/_*", "!**/__*" ],
-		"nameRegex": "^templates/(.+)\\.hbs$",
-		"runtime": "lib/handlebars.js",
-		"options": {
-			"knownHelpers": [ "if", "unless", "each", "with", "lookup", "log" ],
-			"knownHelpersOnly": false,
-			"data": true
-		}
 	},
 	"make:css:less": {
 		"description": "Compile LESS to CSS",
@@ -134,7 +130,7 @@
 		"description": "Analyze and Fix JS with JSCS",
 		"processor": "jscs",
 		"rcFile": ".jscsrc",
-		"files": [ "{{make:js:style.rcFile}}", "**/*.js", "!{{make:html:hbs.runtime}}", "!**/*.hbs.js" ],
+		"files": [ "{{make:js:style.rcFile}}", "**/*.js" ],
 		"fix": true
 	},
 	"make:js:hint": {
@@ -142,19 +138,26 @@
 		"processor": "jshint",
 		"rcFile": ".jshintrc",
 		"ignoreFile": ".jshintignore",
-		"files": [
-			"{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js",
-			"!{{make:html:hbs.runtime}}", "!**/*.hbs.js"
-		]
+		"files": [ "{{make:js:hint.rcFile}}", "{{make:js:hint.ignoreFile}}", "**/*.js" ]
 	},
 	"make:js:esnext": {
 		"description": "Transpile ES6+ to ES5 with Babel",
 		"processor": "babel",
 		"rcFile": ".babelrc",
-		"files": [
-			"{{make:js:esnext.rcFile}}", "**/*.js{,.map}",
-			"!{{make:html:hbs.runtime}}", "!**/*.hbs.js"
-		]
+		"files": [ "{{make:js:esnext.rcFile}}", "**/*.js{,.map}" ]
+	},
+	"make:js:hbs": {
+		"description": "Compile Handlebars templates",
+		"processor": "hbs-js",
+		"files": [ "templates/**/*.hbs" ],
+		"partialFiles": [ "**/_*", "!**/__*" ],
+		"nameRegex": "^templates/(.+)\\.hbs$",
+		"runtime": "lib/handlebars.js",
+		"options": {
+			"knownHelpers": [ "if", "unless", "each", "with", "lookup", "log" ],
+			"knownHelpersOnly": false,
+			"data": true
+		}
 	},
 	"make:js:minify": {
 		"description": "Minify JS",
