@@ -1,8 +1,6 @@
 {
 	"nbob": {
-		"multiCore": true,
-		"openbrowser": false,
-		"host": "localhost"
+		"multiCore": true
 	},
 	"project": {
 		"name": null,
@@ -47,19 +45,11 @@
 		"host": null,
 		"resources": []
 	},
-	"update:doc": {
-		"description": "Update doc directory",
-		"processor": null
-	},
 	"update:l10n": {
 		"description": "Update l10n directory",
 		"processor": "l10n-update",
 		"locales": "l10n/*.json",
 		"files": [ "{{update:l10n.locales}}", "**/*-l10n{,-*}.{html,hbs}", "**/*-l10n/**/*.{html,hbs}" ]
-	},
-	"update:lib": {
-		"description": "Update lib directory",
-		"processor": null
 	},
 	"update:endings": {
 		"description": "Convert text file line endings",
@@ -181,10 +171,6 @@
 		"exports": [],
 		"ignoreUndefDeps": false
 	},
-	"make:js:test": {
-		"description": "Run tests",
-		"processor": null
-	},
 	"make:include": {
 		"description": "Include files",
 		"processor": "include",
@@ -211,9 +197,21 @@
 		"files": [ "**/*" ]
 	},
 	"server": {
-		"description": "Make and host files",
+		"description": "Make and host files using BrowserSync",
 		"processor": "server",
-		"port": 8080
+		"options": {
+			"logLevel": "silent",
+			"server": {
+				"baseDir": "{{project.distDir}}",
+				"directory": false
+			},
+			"files": [
+				"{{project.distDir}}/**/*",
+				"!**/*.map"
+			],
+			"minify": false,
+			"reloadOnRestart": true
+		}
 	},
 	"deploy": {
 		"description": "Make and copy to S3",

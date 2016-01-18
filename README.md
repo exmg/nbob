@@ -68,9 +68,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	    aws         Create ~/.aws/credentials
 	  update
 	    api         Update EM api directory
-	    doc         *Update doc directory
 	    l10n        Update l10n directory
-	    lib         *Update lib directory
 	    endings     Convert text file line endings
 	  clean         Remove build and dist directories
 	  make
@@ -93,22 +91,17 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      minify    Minify JS
 	      concat    Concatenate JS files
 	      amd       Optimize EM AMD modules
-	      test      *Run tests
 	    include     Include files
 	    substitute  Substitute in file paths and text
 	    dist        Write files to dist directory
-	  server        Make and host files
+	  server        Make and host files using BrowserSync
 	  deploy        Make and copy to S3
 
 	Options:
 	  -d, --dir     Use specified working directory (default: <current working directory>)
 	  -e, --env     Use specified environment config overrides
 	  -l, --level   Use specified log level (spam/debug/info/ok/warn/error/silent) (default: info)
-	  -o, --option  Override specified option in config (e.g: -o server.port=8081)
-	  -r, --reload  *Run live-reload server on dist directory
-	  -s, --sync    *Run browser-sync server on dist directory
-
-	*) Not yet implemented
+	  -o, --option  Override specified option in config (e.g: -o deploy.force=true)
 
 	Note: Like options, commands can be abbreviated, per example:
 	Full length:    nbob --env=staging update:api deploy
@@ -166,16 +159,12 @@ It is however a deprecated feature since it does not combine well with config ex
 The special configuration section with key `nbob` has the following options:
 
 * `multiCore = true` - Toggles multi-core processing on or off
-* `host = 'localhost'` -
-* `openbrowser = false` - If set to true will open browser window when starting `$ nbob server`
 
 **Example:**
 ```json
 {
 	"nbob": {
-		"multiCore": false,
-		"host": "localhost",
-		"openbrowser": true
+		"multiCore": false
 	}
 }
 ```
@@ -248,8 +237,9 @@ If you want to quickly override a single configuration value you can use the `--
 
 **Examples:**
 
-* `$ nbob -o server.port=8081 s` - In case you want to run multiple nbob servers
-* `$ nbob -o deploy.force=true d` - In case you want to force a deploy of all files (not just the changed ones)
+* `$ nbob -o server.options.port=4000 s` - To override the server port
+* `$ nbob -o server.options.tunnel=abcxyz123 s` - To attempt to hookup a tunnel to https://abcxyz123.localtunnel.me
+* `$ nbob -o deploy.force=true d` - To force a deploy of all files (not just the changed ones)
 
 [▴TOC](#table-of-contents)
 
@@ -316,11 +306,6 @@ Here are some links to third party tools that might be used for pending processo
 * JS Testing
   * [mocha](http://visionmedia.github.io/mocha)
   * [intern](http://theintern.io)
-* Live Reload
-  * [tiny-lr](https://github.com/mklabs/tiny-lr)
-* Browser Sync
-  * [browser-sync](https://github.com/shakyshane/browser-sync)
-  * [ghostlab](http://vanamco.com/ghostlab)
 
 [▴TOC](#table-of-contents)
 
