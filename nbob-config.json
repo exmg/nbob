@@ -107,6 +107,7 @@
 		"description": "Post process CSS",
 		"processor": "postcss",
 		"files": [ "{{init:browsers.file}}", "**/*.css{,.map}" ],
+		"ignoreWarnings": false,
 		"plugins": {
 			"autoprefixer": {
 				"remove": false
