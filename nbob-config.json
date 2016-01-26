@@ -183,7 +183,7 @@
 		"description": "Substitute in file paths and text",
 		"processor": "substitute",
 		"files": [ "**/*" ],
-		"textFiles": [ "**/*.{html,hbs,css,js,json}" ],
+		"textFiles": [ "**/*.css", "**/*.json", "**/*.js", "**/*.html" ],
 		"substitutes": {
 			"ENV": "__ENV__",
 			"BUILD": "__BUILD__",
