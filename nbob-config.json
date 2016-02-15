@@ -184,6 +184,7 @@
 		"processor": "substitute",
 		"files": [ "**/*" ],
 		"textFiles": [ "**/*.{html,css,js,json}" ],
+		"ignoreMD5": false,
 		"substitutes": {
 			"ENV": "__ENV__",
 			"BUILD": "__BUILD__",
@@ -223,11 +224,8 @@
 		"region": "eu-west-1",
 		"bucketName": null,
 		"force": false,
-		"cacheControl": "max-age=3600",
-		"cacheControlRules": [ {
-			"files": [ "build-*/**/*" ],
-			"control": "max-age=31536000"
-		} ],
+		"cacheControl": "max-age=31536000",
+		"cacheControlRules": [],
 		"gzipThreshold": 1000
 	},
 	"envConfigMap": {
