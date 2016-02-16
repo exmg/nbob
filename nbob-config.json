@@ -15,7 +15,8 @@
 			"!dist/**/*",
 			"!nbob-config.json",
 			"!*.sublime-*",
-			"!node_modules/**/*"
+			"!node_modules/**/*",
+			"!bower_components/**/*"
 		],
 		"buildDir": "build",
 		"distDir": "dist"
@@ -154,7 +155,10 @@
 		"description": "Minify JS",
 		"processor": "uglify",
 		"files": [ "**/*.js{,.map}", "!**/*.min.js" ],
-		"ignoreFiles": [ "templates/**/*" ],
+		"ignoreFiles": [
+			"templates/**/*",
+			"bower_components/**/*"
+		],
 		"mangle": true,
 		"compressor": {},
 		"printer": {}
@@ -190,6 +194,16 @@
 			"PROJECT": "{{project.name}}",
 			"VERSION": "{{project.version}}",
 			"MIN_JS": "{{make:js:concat.output}}"
+		}
+	},
+	"make:components": {
+		"description": "Vulcanize Web Components",
+		"processor": "components",
+		"files": [ "components.html" ],
+		"options": {
+			"inlineScripts": true,
+			"inlineCss": true,
+			"stripComments": true
 		}
 	},
 	"make:dist": {
