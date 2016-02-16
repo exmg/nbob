@@ -176,6 +176,16 @@
 		"exports": [],
 		"ignoreUndefDeps": false
 	},
+	"make:components": {
+		"description": "Vulcanize Web Components",
+		"processor": "components",
+		"files": [ "components.html" ],
+		"options": {
+			"inlineScripts": true,
+			"inlineCss": true,
+			"stripComments": true
+		}
+	},
 	"make:include": {
 		"description": "Include files",
 		"processor": "include",
@@ -194,16 +204,6 @@
 			"PROJECT": "{{project.name}}",
 			"VERSION": "{{project.version}}",
 			"MIN_JS": "{{make:js:concat.output}}"
-		}
-	},
-	"make:components": {
-		"description": "Vulcanize Web Components",
-		"processor": "components",
-		"files": [ "components.html" ],
-		"options": {
-			"inlineScripts": true,
-			"inlineCss": true,
-			"stripComments": true
 		}
 	},
 	"make:dist": {
