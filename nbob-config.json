@@ -16,6 +16,7 @@
 			"!nbob-config.json",
 			"!*.sublime-*",
 			"!node_modules/**/*",
+			"!bower.json",
 			"!bower_components/**/*"
 		],
 		"buildDir": "build",
@@ -180,11 +181,13 @@
 		"description": "Vulcanize Web Components",
 		"processor": "components",
 		"files": [ "components.html" ],
-		"options": {
+		"minimize": true,
+		"vulcanize": {
 			"inlineScripts": true,
 			"inlineCss": true,
 			"stripComments": true
-		}
+		},
+		"uglify": {}
 	},
 	"make:include": {
 		"description": "Include files",
@@ -253,6 +256,11 @@
 				"mangle": false,
 				"compressor": {
 					"drop_debugger": false
+				}
+			},
+			"make:components": {
+				"uglify": {
+					"mangle": false
 				}
 			}
 		}
