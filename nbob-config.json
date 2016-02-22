@@ -249,19 +249,30 @@
 	},
 	"envConfigMap": {
 		"debug": {
+			"project": {
+				"files": [ "!!bower_components/**/*" ]
+			},
 			"make:html:minify": {
 				"files": [ "!!" ]
 			},
+			"make:css:post": {
+				"files": [ "!bower_components/**/*" ]
+			},
+			"make:js:esnext": {
+				"files": [ "!bower_components/**/*" ]
+			},
 			"make:js:minify": {
+				"files": [ "!bower_components/**/*" ],
 				"mangle": false,
 				"compressor": {
 					"drop_debugger": false
 				}
 			},
 			"make:components": {
-				"uglify": {
-					"mangle": false
-				}
+				"files": [ "!!" ]
+			},
+			"make:substitute": {
+				"files": [ "!bower_components/**/*" ]
 			}
 		}
 	}
