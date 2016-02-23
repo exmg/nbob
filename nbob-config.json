@@ -16,7 +16,6 @@
 			"!nbob-config.json",
 			"!*.sublime-*",
 			"!node_modules/**/*",
-			"!bower.json",
 			"!bower_components/**/*"
 		],
 		"buildDir": "build",
@@ -59,8 +58,9 @@
 		"files": [ "**/*.{html,hbs,css,js,json,less,scss}" ]
 	},
 	"clean": {
-		"description": "Remove build and dist directories",
-		"processor": "clean"
+		"description": "Remove nbob outputs",
+		"processor": "clean",
+		"directories": [ "{{project.buildDir}}", "{{project.distDir}}", "bower_components" ]
 	},
 	"make:images:png": {
 		"description": "Compress PNG images",
@@ -156,10 +156,7 @@
 		"description": "Minify JS",
 		"processor": "uglify",
 		"files": [ "**/*.js{,.map}", "!**/*.min.js" ],
-		"ignoreFiles": [
-			"templates/**/*",
-			"bower_components/**/*"
-		],
+		"ignoreFiles": [ "templates/**/*" ],
 		"mangle": true,
 		"compressor": {},
 		"printer": {}
@@ -176,18 +173,6 @@
 		"files": [ "{{make:js:concat.output}}{,.map}" ],
 		"exports": [],
 		"ignoreUndefDeps": false
-	},
-	"make:components": {
-		"description": "Vulcanize Web Components",
-		"processor": "components",
-		"files": [ "components.html" ],
-		"minimize": true,
-		"vulcanize": {
-			"inlineScripts": true,
-			"inlineCss": true,
-			"stripComments": true
-		},
-		"uglify": {}
 	},
 	"make:include": {
 		"description": "Include files",
@@ -208,6 +193,26 @@
 			"VERSION": "{{project.version}}",
 			"MIN_JS": "{{make:js:concat.output}}"
 		}
+	},
+	"make:bower": {
+		"description": "Bower install",
+		"processor": "bower",
+		"files": [],
+		"file": "bower.json",
+		"copy": [ "bower_components/**/*" ]
+	},
+	"make:components": {
+		"description": "Vulcanize Web Components",
+		"processor": "components",
+		"files": [ "{{make:components.target}}", "bower_components/**/*" ],
+		"target": "components.html",
+		"minimize": true,
+		"vulcanize": {
+			"inlineScripts": true,
+			"inlineCss": true,
+			"stripComments": true
+		},
+		"uglify": {}
 	},
 	"make:dist": {
 		"description": "Write files to dist directory",
@@ -249,20 +254,7 @@
 	},
 	"envConfigMap": {
 		"debug": {
-			"project": {
-				"files": [ "!!bower_components/**/*" ]
-			},
-			"make:html:minify": {
-				"files": [ "!!" ]
-			},
-			"make:css:post": {
-				"files": [ "!bower_components/**/*" ]
-			},
-			"make:js:esnext": {
-				"files": [ "!bower_components/**/*" ]
-			},
 			"make:js:minify": {
-				"files": [ "!bower_components/**/*" ],
 				"mangle": false,
 				"compressor": {
 					"drop_debugger": false
@@ -270,9 +262,6 @@
 			},
 			"make:components": {
 				"files": [ "!!" ]
-			},
-			"make:substitute": {
-				"files": [ "!bower_components/**/*" ]
 			}
 		}
 	}
