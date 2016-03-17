@@ -202,16 +202,24 @@
 		"copy": [ "bower_components/**/*" ]
 	},
 	"make:components": {
-		"description": "Vulcanize Web Components",
+		"description": "Process Web Components",
 		"processor": "components",
-		"files": [ "{{make:components.target}}", "bower_components/**/*" ],
-		"target": "components.html",
-		"minimize": true,
+		"bower": "{{make:bower.file}}",
+		"files": [
+			"{{make:components.bower}}",
+			"/^components/([^/]+)/\\1.(html|css|js)$/",
+			"bower_components/**/*.{html,css,js}",
+			"!{bower_,}components/*/{demo,docs,test}/**/*",
+			"!{bower_,}components/*/index.html"
+		],
+		"imports": [ "/^(bower_)?components/([^/]+)/\\2.html$/" ],
+		"output": "components.html",
 		"vulcanize": {
 			"inlineScripts": true,
 			"inlineCss": true,
 			"stripComments": true
 		},
+		"minimizeInline": true,
 		"uglify": {}
 	},
 	"make:dist": {
@@ -261,7 +269,7 @@
 				}
 			},
 			"make:components": {
-				"files": [ "!!" ]
+				"vulcanize": false
 			}
 		}
 	}
