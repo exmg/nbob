@@ -177,8 +177,15 @@
 	"make:include": {
 		"description": "Include files",
 		"processor": "include",
-		"partials": "inc/**/*",
-		"files": [ "**/*-inc{,-*}.html", "{{make:include.partials}}" ],
+		"files": [
+			"**/*-inc{,-*}.html",
+			"{{make:include.partials}}",
+			"components/*/*.{html,css,js}"
+		],
+		"partials": [
+			"inc/**/*",
+			"components/*/*.{css,js}"
+		],
 		"regex": "(?:\\<!--|/\\*) \\{\\{\\> (.*?)}} (?:--\\>|\\*/)"
 	},
 	"make:substitute": {
