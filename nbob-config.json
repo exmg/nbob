@@ -179,7 +179,7 @@
 		"processor": "include",
 		"files": [
 			"**/*-inc{,-*}.html",
-			"{{make:include.partials}}",
+			"inc/**/*",
 			"components/*/*.{html,css,js}"
 		],
 		"partials": [
