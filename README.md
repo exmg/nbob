@@ -70,7 +70,7 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	    api         Update EM api directory
 	    l10n        Update l10n directory
 	    endings     Convert text file line endings
-	  clean         Remove build and dist directories
+	  clean         Remove nbob outputs
 	  make
 	    images
 	      png       Compress PNG images
@@ -93,6 +93,8 @@ Running nbob in your terminal with invalid or incomplete arguments will result i
 	      amd       Optimize EM AMD modules
 	    include     Include files
 	    substitute  Substitute in file paths and text
+	    bower       Bower install
+	    components  Process Web Components
 	    dist        Write files to dist directory
 	  server        Make and host files using BrowserSync
 	  deploy        Make and copy to S3
@@ -312,6 +314,8 @@ Here are some links to third party tools that might be used for pending processo
 ## Conventions
 nBob uses the following filename and directory conventions:
 
+* `bower_components/**/*` - Bower components
+* `components/<name>/<name>.html` - Web Components
 * `inc/**/*` - HTML include files
 * `l10n/*.json` - Localization dictionary files
 * `lib/**/*.js` (and optionally `*.map`) - External JavaScript files from other projects etc. to be included into this project
