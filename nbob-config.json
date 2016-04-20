@@ -15,7 +15,8 @@
 			"!dist/**/*",
 			"!nbob-config.json",
 			"!*.sublime-*",
-			"!node_modules/**/*"
+			"!node_modules/**/*",
+			"!bower_components/**/*"
 		],
 		"buildDir": "build",
 		"distDir": "dist"
@@ -57,8 +58,9 @@
 		"files": [ "**/*.{html,hbs,css,js,json,less,scss}" ]
 	},
 	"clean": {
-		"description": "Remove build and dist directories",
-		"processor": "clean"
+		"description": "Remove nbob outputs",
+		"processor": "clean",
+		"directories": [ "{{project.buildDir}}", "{{project.distDir}}", "bower_components" ]
 	},
 	"make:images:png": {
 		"description": "Compress PNG images",
@@ -175,8 +177,15 @@
 	"make:include": {
 		"description": "Include files",
 		"processor": "include",
-		"partials": "inc/**/*",
-		"files": [ "**/*-inc{,-*}.html", "{{make:include.partials}}" ],
+		"files": [
+			"**/*-inc{,-*}.html",
+			"inc/**/*",
+			"components/*/*.{html,css,js}"
+		],
+		"partials": [
+			"inc/**/*",
+			"components/*/*.{css,js}"
+		],
 		"regex": "(?:\\<!--|/\\*) \\{\\{\\> (.*?)}} (?:--\\>|\\*/)"
 	},
 	"make:substitute": {
@@ -191,6 +200,34 @@
 			"VERSION": "{{project.version}}",
 			"MIN_JS": "{{make:js:concat.output}}"
 		}
+	},
+	"make:bower": {
+		"description": "Bower install",
+		"processor": "bower",
+		"files": [],
+		"file": "bower.json",
+		"copy": [ "bower_components/**/*" ]
+	},
+	"make:components": {
+		"description": "Process Web Components",
+		"processor": "components",
+		"bower": "{{make:bower.file}}",
+		"files": [
+			"{{make:components.bower}}",
+			"/^components/([^/]+)/\\1.(html|css|js)$/",
+			"bower_components/**/*.{html,css,js}",
+			"!{bower_,}components/*/{demo,docs,test}/**/*",
+			"!{bower_,}components/*/index.html"
+		],
+		"imports": [ "/^(bower_)?components/([^/]+)/\\2.html$/" ],
+		"output": "components.html",
+		"vulcanize": {
+			"inlineScripts": true,
+			"inlineCss": true,
+			"stripComments": true
+		},
+		"minimizeInline": true,
+		"uglify": {}
 	},
 	"make:dist": {
 		"description": "Write files to dist directory",
@@ -232,14 +269,14 @@
 	},
 	"envConfigMap": {
 		"debug": {
-			"make:html:minify": {
-				"files": [ "!!" ]
-			},
 			"make:js:minify": {
 				"mangle": false,
 				"compressor": {
 					"drop_debugger": false
 				}
+			},
+			"make:components": {
+				"vulcanize": false
 			}
 		}
 	}
