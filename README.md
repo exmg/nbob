@@ -293,7 +293,7 @@ Here are some links to third party tools that might be used for pending processo
   * [docco](http://jashkenas.github.io/docco)
   * [doxx](https://github.com/FGRibreau/doxx)
   * [esdoc](https://esdoc.org)
-  * [documentation](https://github.com/documentationjs/documentation)
+  * [documentation](http://documentation.js.org)
 * CSS linting
   * [recess](https://github.com/twitter/recess)
 * ES6 Module loading and packaging
@@ -305,6 +305,7 @@ Here are some links to third party tools that might be used for pending processo
 * JS Linting
   * [eslint](http://eslint.org) (possible alternative to jshint and jscs?)
   * [flow](http://flowtype.org)
+  * [coala](https://github.com/coala-analyzer/coala)
 * JS Testing
   * [mocha](http://visionmedia.github.io/mocha)
   * [intern](http://theintern.io)
