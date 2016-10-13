@@ -137,7 +137,8 @@
 		"description": "Transpile ES6+ to ES5 with Babel",
 		"processor": "babel",
 		"rcFile": ".babelrc",
-		"files": [ "{{make:js:esnext.rcFile}}", "**/*.js{,.map}" ]
+		"files": [ "{{make:js:esnext.rcFile}}", "**/*.js{,.map}" ],
+		"options": {}
 	},
 	"make:js:hbs": {
 		"description": "Compile Handlebars templates",
