@@ -250,7 +250,8 @@
 			],
 			"minify": false,
 			"reloadOnRestart": true
-		}
+		},
+		"default": "app.html"
 	},
 	"deploy": {
 		"description": "Make and copy to S3",
