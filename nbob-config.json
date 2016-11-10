@@ -242,6 +242,7 @@
 			"logLevel": "silent",
 			"server": {
 				"baseDir": "{{project.distDir}}",
+				"index": "index.html",
 				"directory": false
 			},
 			"files": [
