@@ -207,7 +207,8 @@
 		"processor": "bower",
 		"files": [],
 		"file": "bower.json",
-		"copy": [ "bower_components/**/*" ]
+		"dir": "bower_components",
+		"copy": [ "{{make:bower.dir}}/**/*" ]
 	},
 	"make:components": {
 		"description": "Process Web Components",
