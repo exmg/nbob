@@ -11,13 +11,13 @@
 			"{{make:js:hint.ignoreFile}}",
 			"{{make:js:style.rcFile}}",
 			"{{make:js:esnext.rcFile}}",
-			"!.{hg,git}*",
-			"!{{project.buildDir}}",
-			"!{{project.distDir}}",
+			"!.{hg,hgcheck,git}/**/*",
+			"!{{project.buildDir}}/**/*",
+			"!{{project.distDir}}/**/*",
 			"!nbob-config.json",
 			"!*.sublime-*",
-			"!node_modules",
-			"!{{make:bower.dir}}"
+			"!node_modules/**/*",
+			"!{{make:bower.dir}}/**/*"
 		],
 		"buildDir": "build",
 		"distDir": "dist"
