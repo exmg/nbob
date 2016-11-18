@@ -262,6 +262,7 @@
 		"dependencies": [ "make" ],
 		"files": [ "**/*", "!**/*.{gv,map}" ],
 		"keep": [],
+		"profile": null,
 		"region": "eu-west-1",
 		"bucketName": null,
 		"force": false,
