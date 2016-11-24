@@ -16,6 +16,8 @@
 			"!{{project.distDir}}/**/*",
 			"!nbob-config.json",
 			"!*.sublime-*",
+			"!package.json",
+			"!yarn.lock",
 			"!node_modules/**/*",
 			"!{{make:bower.dir}}/**/*"
 		],
