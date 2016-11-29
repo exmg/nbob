@@ -46,7 +46,7 @@
 		"description": "Update EM api directory",
 		"processor": "em-api",
 		"template": "playtotv-define",
-		"host": null,
+		"url": null,
 		"resources": []
 	},
 	"update:l10n": {
