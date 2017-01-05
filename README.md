@@ -307,7 +307,7 @@ Here are some links to third party tools that might be used for pending processo
   * [flow](http://flowtype.org)
   * [coala](https://github.com/coala-analyzer/coala)
 * JS Testing
-  * [mocha](http://visionmedia.github.io/mocha)
+  * [mocha](http://mochajs.org/)
   * [intern](http://theintern.io)
 
 [▴TOC](#table-of-contents)
