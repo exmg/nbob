@@ -1,5 +1,6 @@
-#nBob
+# nBob
 <img align="right" height="200" src="https://raw.githubusercontent.com/exmg/nbob/master/bob.jpg" title="Bob the builder" />
+
 [Ex Machina](http://exmg.tv)'s second generation frontend build tool, based on Node and V8, focussing on:
 
 * **Ease of use**
@@ -18,6 +19,16 @@
 See the [releases page](https://github.com/exmg/nbob/releases) for a changelog.
 
 Licensed under [MIT License](LICENSE) and Copyright [Ex Machina](http://exmg.tv).
+
+## Deprecation Notice
+Thanks to the advent of modern standards (e.g: ES Modules), frameworks (e.g: [Polymer](https://www.polymer-project.org) and [React](https://reactjs.org/)) and build tools (e.g: [webpack](https://webpack.js.org) and [rollup.js](https://rollupjs.org)) our old framework and build tools have become deprecated. I might still update nBob with a few patch/minor dependency patches to keep it working for a few old projects, but that's it.
+
+### Handlebars Vulnerability
+The version of Handlebars (v3.0.3) that is used by nBob has a vulnerability that allows remote attackers to conduct cross-site scripting (XSS) attacks by leveraging a template with an attribute that is not quoted.
+
+The proposed solution of updating to Handlebars v4 is not an option based on the above mentioned deprecation as it would break many things. Instead I advice taking care (as always) in quoting your attributes.
+
+For details see: [CVE-2015-8861](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8861)
 
 ## Table of Contents
 * [Installation](#installation)
