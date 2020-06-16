@@ -31,7 +31,7 @@
     "minimatch": "~3.0.4",
     "minimist": "~1.2.0",
     "mkdirp": "~0.5.1",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.4",
     "npmlog": "~1.2.1",
     "pako": "~1.0.5",
     "postcss": "~6.0.3",
