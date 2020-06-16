@@ -1,5 +1,5 @@
 {
-  "name": "nbob",
+  "name": "@exmg/nbob",
   "description": "Ex Machina's frontend build tool",
   "version": "2.1.1",
   "homepage": "https://github.com/exmg/nbob/",
@@ -21,7 +21,7 @@
     "csswring": "~6.0.0",
     "es6-promise": "~4.1.0",
     "handlebars": "~3.0.3",
-    "imagemin-pngquant": "~5.0.1",
+    "imagemin-pngquant": "~6.0.0",
     "jscs": "~1.13.1",
     "jshint": "~2.9.5",
     "jsonlint": "~1.6.2",
@@ -41,5 +41,8 @@
     "update-notifier": "~2.2.0",
     "vulcanize": "~1.15.4"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "restricted"
+  }
 }
